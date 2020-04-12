@@ -1,0 +1,5 @@
+.builder {
+  min-width: 15rem;
+  width: 25vw;
+  border: solid 1px black;
+}
