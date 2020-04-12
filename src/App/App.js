@@ -9,11 +9,33 @@ function App() {
     <div className="App">
       <Builder
         menus={[
-          {title: "Header", formItems: ["Company Logo", "Background Color", "Border"]},
-          {title: "Image", formItems: ["Image"]},
-          {title: "Content", formItems: ["Content Block"]},
-          {title: "CTA", formItems: ["Button"]},
-          {title: "Footer", formItems: ["Company Name", "Address"]}
+          {
+            title: "Header",
+            formItems: [
+              {title: "Company Logo", component: "FileUploader"},
+              {title: "Background Color", component: "Colorpicker"},
+              {title: "Border", component: "Colorpicker"}
+            ],
+          },
+          {
+            title: "Image",
+            formItems: [{title: "Image", component: "FileUploader"}],
+          },
+          {
+            title: "Content",
+            formItems: [{title: "Content Block", component: "TextField"}],
+          },
+          {
+            title: "CTA",
+            formItems: [{title: "Button", component: "TextField"}],
+          },
+          {
+            title: "Footer",
+            formItems: [
+              {title: "Company Name", component: "TextField"},
+              {title: "Address", component: "TextField"},
+            ],
+          }
         ]}
       />
       <PreviewContainer />
