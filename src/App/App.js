@@ -7,7 +7,15 @@ import ColorPicker from '../Colorpicker/ColorPicker';
 function App() {
   return (
     <div className="App">
-      <Builder menuTitles={["Header", "Image", "Content", "CTA", "Footer"]}/>
+      <Builder
+        menus={[
+          {title: "Header"},
+          {title: "Image"},
+          {title: "Content"},
+          {title: "CTA"},
+          {title: "Footer"}
+        ]}
+      />
       <PreviewContainer />
     </div>
   );
