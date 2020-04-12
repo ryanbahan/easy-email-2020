@@ -3,5 +3,12 @@
 }
 
 .form-item {
-  border: solid 1px black;
+  margin-left: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.form-item-title {
+  padding-left: 0.25rem;
+  margin: 1rem 0;
 }

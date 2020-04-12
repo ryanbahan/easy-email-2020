@@ -10,8 +10,10 @@ export default class Dropdown extends React.Component {
 
   getFormItems = () => {
     return this.props.formItems.map(item =>
-      (
-        <div className="form-item" key={item}>{item}</div>
+      ( <div className="form-item">
+          <input type="checkbox" defaultChecked/>
+          <p className="form-item-title" key={item}>{item}</p>
+        </div>
       )
     );
   }

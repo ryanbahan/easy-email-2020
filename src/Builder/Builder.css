@@ -1,5 +1,6 @@
 .builder {
   min-width: 15rem;
+  min-height: 100vh;
   width: 25vw;
   padding: 1.5rem;
   background-color: #e4e4e4;
