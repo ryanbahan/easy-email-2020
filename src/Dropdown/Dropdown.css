@@ -1,3 +1,7 @@
 .hidden {
   display: none;
 }
+
+.form-item {
+  border: solid 1px black;
+}

@@ -8,7 +8,19 @@ export default class Dropdown extends React.Component {
     }
   }
 
+  getFormItems = () => {
+    return this.props.formItems.map(item =>
+      (
+        <div className="form-item" key={item}>{item}</div>
+      )
+    );
+  }
+
   render() {
-    return <div className={this.props.dropdown ? "dropdown" : "hidden dropdown"}>test</div>
+    return (
+      <div className={this.props.dropdown ? "dropdown" : "hidden dropdown"}>
+        {this.getFormItems()}
+      </div>
+    )
   }
 }

@@ -29,7 +29,10 @@ export default class DropdownContainer extends React.Component {
           </div>
           <p className="dropdown-toggle" onClick={() => this.toggleDropdown()}>+</p>
         </div>
-        <Dropdown dropdown={this.state.dropdown}/>
+        <Dropdown
+          dropdown={this.state.dropdown}
+          formItems={this.props.formItems}
+        />
       </div>
     )
   }
