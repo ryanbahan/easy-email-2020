@@ -9,11 +9,11 @@ function App() {
     <div className="App">
       <Builder
         menus={[
-          {title: "Header"},
-          {title: "Image"},
-          {title: "Content"},
-          {title: "CTA"},
-          {title: "Footer"}
+          {title: "Header", formItems: ["Company Logo", "Background Color", "Border"]},
+          {title: "Image", formItems: ["Image"]},
+          {title: "Content", formItems: ["Content Block"]},
+          {title: "CTA", formItems: ["Button"]},
+          {title: "Footer", formItems: ["Company Name", "Address"]}
         ]}
       />
       <PreviewContainer />

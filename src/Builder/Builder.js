@@ -6,6 +6,7 @@ export const Builder = props => {
 
   const menuContainers = props.menus.map(menu => (
     <DropdownContainer
+      key={menu.title}
       title={menu.title}
     />
   ));
