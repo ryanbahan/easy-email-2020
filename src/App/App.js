@@ -7,7 +7,7 @@ import ColorPicker from '../Colorpicker/ColorPicker';
 function App() {
   return (
     <div className="App">
-      <Builder />
+      <Builder forms={["Header", "Image", "Content", "CTA", "Footer"]}/>
       <PreviewContainer />
     </div>
   );
