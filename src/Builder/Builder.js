@@ -4,7 +4,7 @@ import DropdownContainer from '../DropdownContainer/DropdownContainer';
 
 export const Builder = props => {
 
-  const menus = props.forms.map(form => (<DropdownContainer title={form} />));
+  const menuContainers = props.menuTitles.map(menuTitle => (<DropdownContainer title={menuTitle} />));
 
-  return <section className="builder">{menus}</section>
+  return <section className="builder">{menuContainers}</section>
 }

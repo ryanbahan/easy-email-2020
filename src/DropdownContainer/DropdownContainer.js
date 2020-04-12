@@ -10,6 +10,13 @@ export default class DropdownContainer extends React.Component {
   }
 
   render() {
-    return <div className="dropdown-container">{this.props.title}</div>
+    return (
+      <div className="dropdown-container">
+        <div className="title-wrapper">
+          <input type="checkbox" className="visibility-toggle" checked/>
+          {this.props.title}
+        </div>
+        <p className="dropdown-toggle">+</p>
+      </div>)
   }
 }
