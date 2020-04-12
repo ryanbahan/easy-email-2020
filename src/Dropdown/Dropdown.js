@@ -9,6 +9,6 @@ export default class Dropdown extends React.Component {
   }
 
   render() {
-    return <div className={this.props.dropdown ? "" : "hidden"}>test</div>
+    return <div className={this.props.dropdown ? "dropdown" : "hidden dropdown"}>test</div>
   }
 }
