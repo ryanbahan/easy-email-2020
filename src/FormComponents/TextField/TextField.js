@@ -30,7 +30,7 @@ export default class TextField extends React.Component {
           <div className={this.state.active ? "modal-wrapper" : "hidden"}>
             <div className="modal">
               <p className="close-modal" onClick={() => this.toggleModal()}>X</p>
-              <input type="text" onChange={this.handleFormInput}/>
+              <textarea type="text" onChange={this.handleFormInput}/>
               <button
                 onClick={() => context
                   .update(this.props.store, this.state.content)}

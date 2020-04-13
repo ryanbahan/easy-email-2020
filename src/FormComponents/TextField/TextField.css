@@ -2,33 +2,36 @@
   display: none;
 }
 
+.modal-wrapper {
+  flex-basis: 100%;
+  margin-bottom: 1rem;
+}
+
+.modal-wrapper button,
 .text-field-btn {
   cursor: pointer;
 }
 
-.modal-wrapper {
-  background-color: rgba(0,0,0,0.25);
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  min-width: 100vw;
-  min-height: 100vh;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.modal-wrapper button {
+  border: solid 0.5px rgba(0,0,0,0.25);
+  border-radius: 0.25rem;
 }
 
 .modal {
-  position: relative;
   border: solid 0.5px rgba(0,0,0,0.05);
   border-radius: 0.25em;
-  background-color: white;
-  width: 35%;
-  height: 35%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+}
+
+.modal textarea {
+  flex-grow: 1;
+  margin: 0 1.25rem;
+}
+
+.modal button {
+  /* margin: 2.5rem;
+  font-size: 1rem; */
 }
 
 .close-modal {

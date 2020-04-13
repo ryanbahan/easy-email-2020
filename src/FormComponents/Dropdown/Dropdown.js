@@ -5,11 +5,6 @@ import FileUploader from '../FileUploader/FileUploader';
 import TextField from '../TextField/TextField';
 
 export default class Dropdown extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    }
-  }
 
   getFormComponent = (item) => {
     switch (item.component) {
