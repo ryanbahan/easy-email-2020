@@ -7,7 +7,7 @@ export default function EmailCTA(props) {
     <div className="email-cta">
       <MyContext.Consumer>
         {(context) => (
-          <button>{context.cta}</button>
+          <button>{context.state.cta}</button>
         )}
       </MyContext.Consumer>
     </div>

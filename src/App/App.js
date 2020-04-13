@@ -13,31 +13,32 @@ function App() {
             {
               title: "Header",
               formItems: [
-                {title: "Company Logo", component: "FileUploader"},
-                {title: "Background Color", component: "Colorpicker"},
-                {title: "Border", component: "Colorpicker"}
+                {title: "Company Logo", component: "FileUploader", store: "companyImage"},
+                {title: "Company Name", component: "TextField", store: "companyName"},
+                {title: "Background Color", component: "Colorpicker", store: "backgroundColor"},
+                {title: "Border", component: "Colorpicker", store: "borderBackgroundColor"}
               ],
             },
             {
               title: "Image",
               formItems: [
                 {title: "Image", component: "FileUploader"},
-                {title: "Image CTA", component: "TextField"}
+                {title: "Image CTA", component: "TextField", store: "mainImageButtonCopy"}
               ],
             },
             {
               title: "Content",
-              formItems: [{title: "Content Block", component: "TextField"}],
+              formItems: [{title: "Content Block", component: "TextField", store: "content"}],
             },
             {
               title: "CTA",
-              formItems: [{title: "Button", component: "TextField"}],
+              formItems: [{title: "Button", component: "TextField", store: "cta"}],
             },
             {
               title: "Footer",
               formItems: [
-                {title: "Company Name", component: "TextField"},
-                {title: "Address", component: "TextField"},
+                {title: "Company Name", component: "TextField", store: "footerAddress"},
+                {title: "Address", component: "TextField", store: "footerAddress"},
               ],
             }
           ]}

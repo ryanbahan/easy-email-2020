@@ -11,17 +11,19 @@ export default class Dropdown extends React.Component {
     }
   }
 
-  getFormComponent = (component) => {
-    switch (component) {
+  getFormComponent = (item) => {
+    switch (item.component) {
       case "Colorpicker":
-        return <Colorpicker />
-        break;
+        return <Colorpicker store={item.store} />
+        break
       case "TextField":
-        return <TextField />
+        return <TextField store={item.store} />
         break
       case "FileUploader":
-        return <FileUploader />
+        return <FileUploader store={item.store} />
         break
+      default:
+        return null;
     }
   }
 
@@ -32,7 +34,7 @@ export default class Dropdown extends React.Component {
             <input type="checkbox" defaultChecked/>
             <p className="form-item-title">{item.title}</p>
           </div>
-          {this.getFormComponent(item.component)}
+          {this.getFormComponent(item)}
         </div>
       )
     );

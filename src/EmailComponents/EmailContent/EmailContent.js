@@ -7,7 +7,7 @@ export default function EmailContent(props) {
     <section className="email-content">
       <MyContext.Consumer>
         {(context) => (
-          <p>{context.content}</p>
+          <p>{context.state.content}</p>
         )}
       </MyContext.Consumer>
     </section>

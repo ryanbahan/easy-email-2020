@@ -20,9 +20,13 @@ export class MyProvider extends React.Component {
     footer: 'Footer',
   }
 
+  updateItem = (category, content) => {
+    this.setState({[category]: content});
+  }
+
   render() {
     return (
-      <MyContext.Provider value={this.state}>
+      <MyContext.Provider value={{state: this.state, update: this.updateItem}}>
         {this.props.children}
       </MyContext.Provider>
     )

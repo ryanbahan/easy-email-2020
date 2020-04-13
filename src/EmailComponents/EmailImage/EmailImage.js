@@ -8,10 +8,10 @@ export default function EmailImage(props) {
       <MyContext.Consumer>
         {(context) => (
           <>
-            <img src={context.mainImage} />
-            <div class="email-image-bottom-bar">
-              <p>{context.mainImageTagline}</p>
-              <button>{context.mainImageButtonCopy}</button>
+            <img src={context.state.mainImage} />
+            <div className="email-image-bottom-bar">
+              <p>{context.state.mainImageTagline}</p>
+              <button>{context.state.mainImageButtonCopy}</button>
             </div>
           </>
         )}

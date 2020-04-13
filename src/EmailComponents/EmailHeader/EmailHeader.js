@@ -8,8 +8,8 @@ export default function EmailHeader(props) {
         <MyContext.Consumer>
           {(context) => (
             <>
-              <img src={context.companyImage} />
-              <p>{context.companyName}</p>
+              <img src={context.state.companyImage} />
+              <p>{context.state.companyName}</p>
             </>
           )}
         </MyContext.Consumer>
