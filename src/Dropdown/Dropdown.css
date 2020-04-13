@@ -2,9 +2,15 @@
   display: none;
 }
 
+.form-title-wrapper {
+  display: flex;
+  align-items: center;
+}
+
 .form-item {
   margin-left: 0.5rem;
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
