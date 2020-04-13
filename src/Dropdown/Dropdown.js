@@ -1,5 +1,8 @@
 import React from 'react';
 import './Dropdown.css';
+import Colorpicker from '../Colorpicker/ColorPicker';
+import FileUploader from '../FileUploader/FileUploader';
+import TextField from '../TextField/TextField';
 
 export default class Dropdown extends React.Component {
   constructor(props) {
@@ -9,7 +12,17 @@ export default class Dropdown extends React.Component {
   }
 
   getFormComponent = (component) => {
-    console.log(component);
+    switch (component) {
+      case "Colorpicker":
+        return <Colorpicker />
+        break;
+      case "TextField":
+        return <TextField />
+        break
+      case "FileUploader":
+        return <FileUploader />
+        break
+    }
   }
 
   getFormItems = () => {
