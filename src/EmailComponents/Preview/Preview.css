@@ -1,0 +1,7 @@
+.preview {
+  border: solid 1px black;
+  width: 50%;
+  height: 75%;
+  min-width: 30rem;
+  min-height: 45rem;
+}

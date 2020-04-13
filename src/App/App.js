@@ -1,8 +1,7 @@
 import React from 'react';
 import './App.css';
-import { Builder } from '../Builder/Builder';
-import { PreviewContainer } from '../PreviewContainer/PreviewContainer';
-import ColorPicker from '../Colorpicker/ColorPicker';
+import { Builder } from '../FormComponents/Builder/Builder';
+import { PreviewContainer } from '../EmailComponents/PreviewContainer/PreviewContainer';
 
 function App() {
   return (
