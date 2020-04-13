@@ -1,3 +1,21 @@
 .email-image {
   border: solid 1px black;
 }
+
+.email-image img {
+  width: 100%;
+}
+
+.email-image-bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 1rem;
+}
+
+.email-image-bottom-bar button {
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+  border: solid 0.5px rgba(0,0,0,0.5);
+  border-radius: 0.25rem;
+}
