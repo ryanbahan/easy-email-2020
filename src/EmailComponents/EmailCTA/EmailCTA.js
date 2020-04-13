@@ -1,10 +1,15 @@
 import React from 'react';
+import { MyContext } from '../../Context';
 import './EmailCTA.css';
 
 export default function EmailCTA(props) {
   return (
     <div className="email-cta">
-      <button>Bottom CTA</button>
+      <MyContext.Consumer>
+        {(context) => (
+          <button>{context.cta}</button>
+        )}
+      </MyContext.Consumer>
     </div>
   )
 }

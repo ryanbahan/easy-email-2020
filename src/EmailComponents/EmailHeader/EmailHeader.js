@@ -5,9 +5,13 @@ import { MyContext } from '../../Context';
 export default function EmailHeader(props) {
   return (
       <header>
-        <img src="https://via.placeholder.com/150" />
         <MyContext.Consumer>
-          {(context) => (<p>{context.companyName}</p>)}
+          {(context) => (
+            <>
+              <img src={context.companyImage} />
+              <p>{context.companyName}</p>
+            </>
+          )}
         </MyContext.Consumer>
       </header>
   )
