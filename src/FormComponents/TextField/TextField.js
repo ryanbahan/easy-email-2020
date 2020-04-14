@@ -1,8 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { update } from '../../actions';
 import { MyContext } from '../../Context';
 import './TextField.css';
 
-export default class TextField extends React.Component {
+class TextField extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -19,10 +21,13 @@ export default class TextField extends React.Component {
     this.setState({content: e.target.value});
   }
 
+  update = (store, content) => {
+    const updatedItem = {[store]: content}
+    this.props.update(updatedItem);
+  }
+
   render() {
     return (
-      <MyContext.Consumer>
-        {(context) => (
           <>
           <button className="text-field-btn" onClick={() => this.toggleModal()}>
             Edit
@@ -32,16 +37,19 @@ export default class TextField extends React.Component {
               <p className="close-modal" onClick={() => this.toggleModal()}>X</p>
               <textarea type="text" onChange={this.handleFormInput}/>
               <button
-                onClick={() => context
-                  .update(this.props.store, this.state.content)}
+                onClick={() => this.update(this.props.store, this.state.content)}
               >
                 Submit
               </button>
             </div>
           </div>
           </>
-        )}
-      </MyContext.Consumer>
     )
   }
 }
+
+const mapDispatchToProps = dispatch => ({
+  update: content => dispatch(update(content))
+})
+
+export default connect(null, mapDispatchToProps)(TextField);

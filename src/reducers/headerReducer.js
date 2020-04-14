@@ -5,14 +5,8 @@ export const headerReducer = (state = {
   borderColor: "#000000",
 }, action) => {
   switch (action.type) {
-    case 'UPDATE_LOGO':
-      return action.payload;
-    case 'UPDATE_NAME':
-      return action.payload;
-    case 'UPDATE_BG_COLOR':
-      return action.payload;
-    case 'UPDATE_BORDER':
-      return action.payload;
+    case 'UPDATE':
+      return {...state, ...action.payload}
     default:
       return state;
   }
