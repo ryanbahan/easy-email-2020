@@ -6,7 +6,10 @@ export default function EmailFooter(props) {
   return (
     <MyContext.Consumer>
       {(context) => (
-        <footer>{context.state.footer}</footer>
+        <footer>
+          <p>{context.state.footerName}</p>
+          <p>{context.state.footerAddress}</p>
+        </footer>
       )}
     </MyContext.Consumer>
   )

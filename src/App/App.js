@@ -38,8 +38,8 @@ function App() {
             {
               title: "Footer",
               formItems: [
-                {title: "Company Name", component: "TextField", store: "footerAddress"},
-                {title: "Address", component: "TextField", store: "footerAddress"},
+                {title: "Company Name", component: "TextField", store: "footerName"},
+                {title: "Company Address", component: "TextField", store: "footerAddress"},
               ],
             }
           ]}

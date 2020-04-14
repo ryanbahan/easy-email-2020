@@ -17,7 +17,8 @@ export class MyProvider extends React.Component {
     from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil)
     by Cicero, written in 45 BC.`,
     cta: 'Bottom CTA',
-    footer: 'Footer',
+    footerAddress: 'Footer',
+    footerName: 'Footer',
   }
 
   updateItem = (category, content) => {
