@@ -12,8 +12,8 @@ function EmailHeader({ companyImage, companyName }) {
 }
 
 const mapStateToProps = state => ({
-  companyImage: state.header.companyImage,
-  companyName: state.header.companyName,
+  companyImage: state.form.companyImage,
+  companyName: state.form.companyName,
 })
 
 export default connect(mapStateToProps)(EmailHeader);

@@ -1,21 +1,25 @@
 import React from 'react';
 import './EmailImage.css';
-import { MyContext } from '../../Context';
+import { connect } from 'react-redux';
 
-export default function EmailImage(props) {
+function EmailImage({mainImage, mainImageTagline, mainImageButtonCopy}) {
   return (
     <section className="email-image">
-      <MyContext.Consumer>
-        {(context) => (
           <>
-            <img src={context.state.mainImage} />
+            <img src={mainImage} />
             <div className="email-image-bottom-bar">
-              <p>{context.state.mainImageTagline}</p>
-              <button>{context.state.mainImageButtonCopy}</button>
+              <p>{mainImageTagline}</p>
+              <button>{mainImageButtonCopy}</button>
             </div>
           </>
-        )}
-      </MyContext.Consumer>
     </section>
   )
 }
+
+const mapStateToProps = state => ({
+  mainImage: state.form.mainImage,
+  mainImageTagline: state.form.mainImageTagline,
+  mainImageButtonCopy: state.form.mainImageButtonCopy,
+});
+
+export default connect(mapStateToProps)(EmailImage);
