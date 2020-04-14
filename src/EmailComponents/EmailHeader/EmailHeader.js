@@ -3,8 +3,10 @@ import './EmailHeader.css';
 import { connect } from 'react-redux';
 
 function EmailHeader({ companyImage, companyName }) {
+
   return (
       <header>
+      {console.log('header', companyImage)}
         <img src={companyImage} />
         <p>{companyName}</p>
       </header>
