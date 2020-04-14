@@ -2,11 +2,9 @@ import React from 'react';
 import './App.css';
 import { Builder } from '../FormComponents/Builder/Builder';
 import { PreviewContainer } from '../EmailComponents/PreviewContainer/PreviewContainer';
-import { MyContext, MyProvider } from '../Context';
 
 function App() {
   return (
-    <MyProvider>
       <div className="App">
         <Builder
           menus={[
@@ -46,7 +44,6 @@ function App() {
         />
         <PreviewContainer />
       </div>
-    </MyProvider>
   );
 }
 

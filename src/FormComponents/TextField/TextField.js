@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { update } from '../../actions';
-import { MyContext } from '../../Context';
 import './TextField.css';
 
 class TextField extends React.Component {
