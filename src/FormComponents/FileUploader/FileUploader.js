@@ -7,19 +7,24 @@ class FileUploader extends React.Component {
 
   getFile = (event) => {
     const file = event.target.files[0];
-    const reader = new FileReader();
-    let imgSrc;
 
-    reader.onload = async (event) => {
-      imgSrc = await event.target.result;
-      update(imgSrc)
-    };
+    if (file) {
+      const reader = new FileReader();
+      let imgSrc;
 
-    const update = (imgSrc) => {
-      this.props.update({[this.props.store]: imgSrc});
+      reader.onload = async (event) => {
+        imgSrc = await event.target.result;
+        update(imgSrc)
+      };
+
+
+      const update = (imgSrc) => {
+        console.log(this.props.store, imgSrc);
+        this.props.update({[this.props.store]: imgSrc});
+      }
+
+      reader.readAsDataURL(file);
     }
-
-    reader.readAsDataURL(file);
   }
 
   render() {

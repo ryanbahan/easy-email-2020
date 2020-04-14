@@ -20,7 +20,7 @@ function App() {
             {
               title: "Image",
               formItems: [
-                {title: "Image", component: "FileUploader"},
+                {title: "Image", component: "FileUploader", store: "mainImage"},
                 {title: "Tagline", component: "TextField", store: "mainImageTagline"},
                 {title: "Image CTA", component: "TextField", store: "mainImageButtonCopy"}
               ],
