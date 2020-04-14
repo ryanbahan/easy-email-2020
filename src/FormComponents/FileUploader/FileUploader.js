@@ -19,7 +19,6 @@ class FileUploader extends React.Component {
 
 
       const update = (imgSrc) => {
-        console.log(this.props.store, imgSrc);
         this.props.update({[this.props.store]: imgSrc});
       }
 

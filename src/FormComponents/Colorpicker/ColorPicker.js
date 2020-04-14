@@ -1,7 +1,9 @@
-import React from 'react'
-import { ChromePicker } from 'react-color'
+import React from 'react';
+import { ChromePicker } from 'react-color';
+import { connect } from 'react-redux';
+import { update } from '../../actions';
 
-export default class ColorPicker extends React.Component {
+class ColorPicker extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -16,6 +18,7 @@ export default class ColorPicker extends React.Component {
 
   handleChange = (color) => {
     this.setState({ background: color.hex });
+    this.props.update({[this.props.store]: color.hex});
   };
 
   handleClose = () => {
@@ -27,7 +30,7 @@ export default class ColorPicker extends React.Component {
       position: 'absolute',
       zIndex: '2',
     }
-    
+
     const cover = {
       position: 'fixed',
       top: '0px',
@@ -54,3 +57,9 @@ export default class ColorPicker extends React.Component {
     )
   }
 }
+
+const mapDispatchToProps = dispatch => ({
+  update: content => dispatch(update(content))
+})
+
+export default connect(null, mapDispatchToProps)(ColorPicker);

@@ -13,8 +13,8 @@ function App() {
               formItems: [
                 {title: "Company Logo", component: "FileUploader", store: "companyImage"},
                 {title: "Company Name", component: "TextField", store: "companyName"},
-                {title: "Background Color", component: "Colorpicker", store: "backgroundColor"},
-                {title: "Border", component: "Colorpicker", store: "borderBackgroundColor"}
+                {title: "Background Color", component: "Colorpicker", store: "bgColor"},
+                {title: "Border", component: "Colorpicker", store: "borderColor"}
               ],
             },
             {
