@@ -1,18 +1,19 @@
 import React from 'react';
 import './EmailHeader.css';
-import { MyContext } from '../../Context';
+import { connect } from 'react-redux';
 
-export default function EmailHeader(props) {
+function EmailHeader({ companyImage, companyName }) {
   return (
       <header>
-        <MyContext.Consumer>
-          {(context) => (
-            <>
-              <img src={context.state.companyImage} />
-              <p>{context.state.companyName}</p>
-            </>
-          )}
-        </MyContext.Consumer>
+        <img src={companyImage} />
+        <p>{companyName}</p>
       </header>
   )
 }
+
+const mapStateToProps = state => ({
+  companyImage: state.header.companyImage,
+  companyName: state.header.companyName,
+})
+
+export default connect(mapStateToProps)(EmailHeader);
