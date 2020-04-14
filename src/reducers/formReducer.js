@@ -14,8 +14,8 @@ export const formReducer = (state = {
   from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil)
   by Cicero, written in 45 BC.`,
   cta: 'Bottom CTA',
-  footerAddress: 'Footer',
-  footerName: 'Footer',
+  footerAddress: 'Address',
+  footerName: 'Name',
 }, action) => {
   switch (action.type) {
     case 'UPDATE':

@@ -1,15 +1,17 @@
 import React from 'react';
-import { MyContext } from '../../Context';
+import { connect } from 'react-redux';
 import './EmailCTA.css';
 
-export default function EmailCTA(props) {
+function EmailCTA({ cta }) {
   return (
     <div className="email-cta">
-      <MyContext.Consumer>
-        {(context) => (
-          <button>{context.state.cta}</button>
-        )}
-      </MyContext.Consumer>
+          <button>{cta}</button>
     </div>
   )
 }
+
+const mapStateToProps = state => ({
+  cta: state.form.cta
+});
+
+export default connect(mapStateToProps)(EmailCTA);

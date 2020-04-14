@@ -1,15 +1,17 @@
 import React from 'react';
 import './EmailContent.css';
-import { MyContext } from '../../Context';
+import { connect } from 'react-redux';
 
-export default function EmailContent(props) {
+function EmailContent({ content }) {
   return (
     <section className="email-content">
-      <MyContext.Consumer>
-        {(context) => (
-          <p>{context.state.content}</p>
-        )}
-      </MyContext.Consumer>
+          <p>{content}</p>
     </section>
-)
+  )
 }
+
+const mapStateToProps = state => ({
+  content: state.form.content
+})
+
+export default connect(mapStateToProps)(EmailContent);

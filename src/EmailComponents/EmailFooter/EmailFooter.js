@@ -1,16 +1,19 @@
 import React from 'react';
-import { MyContext } from '../../Context';
+import { connect } from 'react-redux';
 import './EmailFooter.css';
 
-export default function EmailFooter(props) {
+function EmailFooter({ name, address }) {
   return (
-    <MyContext.Consumer>
-      {(context) => (
         <footer>
-          <p>{context.state.footerName}</p>
-          <p>{context.state.footerAddress}</p>
+          <p>{name}</p>
+          <p>{address}</p>
         </footer>
-      )}
-    </MyContext.Consumer>
   )
 }
+
+const mapStateToProps = state => ({
+  address: state.form.footerAddress,
+  name: state.form.footerName
+});
+
+export default connect(mapStateToProps)(EmailFooter);
