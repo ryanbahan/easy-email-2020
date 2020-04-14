@@ -21,8 +21,7 @@ class TextField extends React.Component {
   }
 
   update = (store, content) => {
-    const updatedItem = {[store]: content}
-    this.props.update(updatedItem);
+    this.props.update({[store]: content});
   }
 
   render() {
