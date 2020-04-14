@@ -14,7 +14,7 @@ class FileUploader extends React.Component {
 
       reader.onload = async (event) => {
         imgSrc = await event.target.result;
-        update(imgSrc)
+        update(imgSrc);
       };
 
 
