@@ -13,8 +13,8 @@ function App() {
               formItems: [
                 {title: "Company Logo", component: "FileUploader", store: "companyImage"},
                 {title: "Company Name", component: "TextField", store: "companyName"},
-                {title: "Background Color", component: "Colorpicker", store: "bgColor"},
-                {title: "Border", component: "Colorpicker", store: "borderColor"}
+                {title: "Font Color", component: "Colorpicker", store: "companyFontColor"},
+                {title: "Background Color", component: "Colorpicker", store: "headerBGColor"},
               ],
             },
             {
@@ -22,7 +22,9 @@ function App() {
               formItems: [
                 {title: "Image", component: "FileUploader", store: "mainImage"},
                 {title: "Tagline", component: "TextField", store: "mainImageTagline"},
-                {title: "Image CTA", component: "TextField", store: "mainImageButtonCopy"}
+                {title: "Button Text", component: "TextField", store: "mainImageButtonCopy"},
+                {title: "Button Color", component: "Colorpicker", store: "mainImageButtonColor"},
+                {title: "Button Font Color", component: "Colorpicker", store: "mainImageButtonFontColor"}
               ],
             },
             {
@@ -31,13 +33,19 @@ function App() {
             },
             {
               title: "CTA",
-              formItems: [{title: "Button", component: "TextField", store: "cta"}],
+              formItems: [
+                {title: "Button", component: "TextField", store: "cta"},
+                {title: "Button Color", component: "Colorpicker", store: "ctaButtonColor"},
+                {title: "Button Font Color", component: "Colorpicker", store: "ctaButtonFontColor"}
+              ],
             },
             {
               title: "Footer",
               formItems: [
                 {title: "Company Name", component: "TextField", store: "footerName"},
                 {title: "Company Address", component: "TextField", store: "footerAddress"},
+                {title: "Font Color", component: "Colorpicker", store: "footerFontColor"},
+                {title: "Background Color", component: "Colorpicker", store: "footerBGColor"},
               ],
             }
           ]}

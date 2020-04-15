@@ -2,12 +2,12 @@ import React from 'react';
 import './EmailHeader.css';
 import { connect } from 'react-redux';
 
-function EmailHeader({ bgColor, borderColor, companyImage, companyName }) {
+function EmailHeader({ bgColor, companyImage, companyName, companyFontColor }) {
 
   return (
-      <header style={{backgroundColor: bgColor, border: `solid 0.5px ${borderColor}`}}>
+      <header style={{backgroundColor: bgColor}}>
         <img src={companyImage} />
-        <p>{companyName}</p>
+        <p style={{color: companyFontColor}}>{companyName}</p>
       </header>
   )
 }
@@ -15,8 +15,8 @@ function EmailHeader({ bgColor, borderColor, companyImage, companyName }) {
 const mapStateToProps = state => ({
   companyImage: state.form.companyImage,
   companyName: state.form.companyName,
-  bgColor: state.form.bgColor,
-  borderColor: state.form.borderColor,
+  companyFontColor: state.form.companyFontColor,
+  bgColor: state.form.headerBGColor,
 })
 
 export default connect(mapStateToProps)(EmailHeader);

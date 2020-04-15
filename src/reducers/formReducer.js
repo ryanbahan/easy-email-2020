@@ -1,8 +1,6 @@
 export const formReducer = (state = {
   companyImage: 'https://via.placeholder.com/150',
   companyName: 'Company Name',
-  bgColor: "#000000",
-  borderColor: "#000000",
   mainImage: 'https://via.placeholder.com/1200x600',
   mainImageTagline: 'CTA Tagline',
   mainImageButtonCopy: 'CTA Here',

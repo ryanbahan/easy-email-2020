@@ -32,7 +32,6 @@ class TextField extends React.Component {
           </button>
           <div className={this.state.active ? "modal-wrapper" : "hidden"}>
             <div className="modal">
-              <p className="close-modal" onClick={() => this.toggleModal()}>X</p>
               <textarea type="text" onChange={this.handleFormInput}/>
               <button
                 onClick={() => this.update(this.props.store, this.state.content)}
