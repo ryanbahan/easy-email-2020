@@ -1,7 +1,21 @@
 .builder {
   min-width: 15rem;
-  min-height: 100vh;
+  height: 100vh;
   width: 25vw;
   padding: 1.5rem;
   background-color: #e4e4e4;
+}
+
+.buttons-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.buttons-wrapper button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: solid 0.5px rgba(0,0,0,0.25);
+  border-radius: 0.25rem;
+  margin: 5rem 2.5rem;
+  cursor: pointer;
 }

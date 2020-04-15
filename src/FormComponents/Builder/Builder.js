@@ -12,5 +12,15 @@ export const Builder = props => {
     />
   ));
 
-  return <section className="builder">{menuContainers}</section>
+  return (
+  <section className="builder">
+    <div className="menu-containers-wrapper">
+      {menuContainers}
+    </div>
+    <div className="buttons-wrapper">
+      <button className="export">Export</button>
+      <button className="analyze">Analyze Message</button>
+    </div>
+  </section>
+  )
 }
