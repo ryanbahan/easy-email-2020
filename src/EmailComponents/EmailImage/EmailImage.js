@@ -1,17 +1,17 @@
 import React from 'react';
-import './EmailImage.css';
 import { connect } from 'react-redux';
 
-function EmailImage({mainImage, mainImageTagline, mainImageButtonCopy, mainImageButtonColor, mainImageButtonFontColor}) {
+function EmailImage(
+  {
+    mainImage,
+    mainImageTagline,
+    mainImageButtonCopy,
+    mainImageButtonColor,
+    mainImageButtonFontColor
+  }) {
   return (
-    <section className="email-image">
-          <>
-            <img src={mainImage} />
-            <div className="email-image-bottom-bar">
-              <p>{mainImageTagline}</p>
-              <button style={{color: mainImageButtonFontColor, backgroundColor: mainImageButtonColor}}>{mainImageButtonCopy}</button>
-            </div>
-          </>
+    <section style={{display: "flex"}}>
+      <img src={mainImage} style={{width: "100%", margin: "0", height: "100%"}}/>
     </section>
   )
 }

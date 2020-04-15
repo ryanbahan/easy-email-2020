@@ -18,23 +18,28 @@ function App() {
               ],
             },
             {
-              title: "Image",
+              title: "Main Image",
               formItems: [
                 {title: "Image", component: "FileUploader", store: "mainImage"},
-                {title: "Tagline", component: "TextField", store: "mainImageTagline"},
-                {title: "Button Text", component: "TextField", store: "mainImageButtonCopy"},
-                {title: "Button Color", component: "Colorpicker", store: "mainImageButtonColor"},
-                {title: "Button Font Color", component: "Colorpicker", store: "mainImageButtonFontColor"}
               ],
             },
             {
-              title: "Content",
-              formItems: [{title: "Content Block", component: "TextField", store: "content"}],
+              title: "Image Tagline",
+              formItems: [
+                {title: "Tagline Text", component: "TextField", store: "mainImageTagline"},
+                {title: "Background Color", component: "Colorpicker", store: "mainImageTaglineBG"},
+                {title: "Font Color", component: "Colorpicker", store: "mainImageFontColor"},
+                {title: null},
+                {title: "Button Text", component: "TextField", store: "mainImageButtonCopy"},
+                {title: "Button Color", component: "Colorpicker", store: "mainImageButtonColor"},
+                {title: "Button Font Color", component: "Colorpicker", store: "mainImageButtonFontColor"},
+              ],
             },
             {
-              title: "CTA",
+              title: "Main Content",
               formItems: [
-                {title: "Button", component: "TextField", store: "cta"},
+                {title: "Content Block Text", component: "TextField", store: "content"},
+                {title: "Button Text", component: "TextField", store: "cta"},
                 {title: "Button Color", component: "Colorpicker", store: "ctaButtonColor"},
                 {title: "Button Font Color", component: "Colorpicker", store: "ctaButtonFontColor"}
               ],

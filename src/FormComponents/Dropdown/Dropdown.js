@@ -26,7 +26,7 @@ export default class Dropdown extends React.Component {
     return this.props.formItems.map(item =>
       ( <div className="form-item" key={item.title}>
           <div className="form-title-wrapper">
-            <input type="checkbox" defaultChecked/>
+            {item.title && <input type="checkbox" defaultChecked/>}
             <p className="form-item-title">{item.title}</p>
           </div>
           {this.getFormComponent(item)}
