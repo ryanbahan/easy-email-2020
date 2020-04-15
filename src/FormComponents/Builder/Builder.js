@@ -7,6 +7,16 @@ export const Builder = props => {
   const getItems = async () => {
     const email = document.querySelector('.preview').outerHTML;
     await navigator.clipboard.writeText(email);
+
+    const data = {toneInput: {text: "some text"}}
+
+    fetch("http://localhost:3000/api/tone", {
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "POST"
+    }).then(res => res.json()).then(data => console.log(data))
   }
 
   const menuContainers = props.menus.map(menu => (
