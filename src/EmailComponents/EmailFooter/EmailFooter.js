@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-function EmailFooter({ name, address, fontColor, bgColor }) {
+function EmailFooter({ address, fontColor, bgColor }) {
 
   const footerStyle = {
     display: "flex",
@@ -15,15 +15,13 @@ function EmailFooter({ name, address, fontColor, bgColor }) {
 
   return (
         <footer style={footerStyle}>
-          <p>{name}</p>
-          <p>{address}</p>
+          <p style={{fontSize: "0.75rem"}}>{address}</p>
         </footer>
   )
 }
 
 const mapStateToProps = state => ({
   address: state.form.footerAddress,
-  name: state.form.footerName,
   bgColor: state.form.footerBGColor,
   fontColor: state.form.footerFontColor,
 });
