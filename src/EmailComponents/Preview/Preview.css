@@ -4,4 +4,5 @@
   width: 30rem;
   max-height: 50rem;
   overflow: scroll;
+  min-height: 5rem;
 }
