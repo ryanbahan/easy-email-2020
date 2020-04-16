@@ -1,8 +1,10 @@
 import React from 'react';
 import './DropdownContainer.css';
 import Dropdown from '../Dropdown/Dropdown';
+import { connect } from 'react-redux';
+import { toggleVisibility } from '../../actions';
 
-export default class DropdownContainer extends React.Component {
+class DropdownContainer extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -12,7 +14,7 @@ export default class DropdownContainer extends React.Component {
   }
 
   toggleChecked = (e) => {
-    this.setState({active: !this.state.active});
+    this.props.toggleVisibility({[this.props.title]: !this.props.active})
   }
 
   toggleDropdown = (e) => {
@@ -37,3 +39,13 @@ export default class DropdownContainer extends React.Component {
     )
   }
 }
+
+const mapDispatchToProps = (dispatch) => ({
+  toggleVisibility: (title, bool) => dispatch(toggleVisibility(title, bool))
+})
+
+const mapStateToProps = (state, ownProps) => {
+  return {active: state.visibility[ownProps.title]}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(DropdownContainer);

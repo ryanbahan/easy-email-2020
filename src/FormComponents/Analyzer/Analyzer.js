@@ -52,7 +52,7 @@ class Analyzer extends React.Component {
         >
         </canvas>
         <h2>Call-to-action Sentiment</h2>
-        <div className="email-tagline-wrapper">
+        <div className="email-cta-wrapper">
           <EmailCTA />
         </div>
         <canvas
