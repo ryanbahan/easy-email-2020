@@ -1,17 +1,11 @@
 export const formReducer = (state = {
   companyImage: 'https://via.placeholder.com/150',
-  companyName: 'Company Name',
+  companyName: 'MailChimp',
   mainImage: 'https://via.placeholder.com/1200x600',
-  mainImageTagline: 'CTA Tagline',
-  mainImageButtonCopy: 'CTA Here',
-  content: `Contrary to popular belief, Lorem Ipsum is not simply random text.
-  It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
-  Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of
-  the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites
-  of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes
-  from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil)
-  by Cicero, written in 45 BC.`,
-  cta: 'Bottom CTA',
+  mainImageTagline: 'Download our new e-book for free!',
+  mainImageButtonCopy: 'Free Download',
+  content: `Hey there, I'm the VP of Business Development here at Devetry – I see you downloaded our "Make Your Software Dream Team a Reality" ebook. I'd love to learn more about your company and what you do there. What would be the best time for a 15-minute phone call?`,
+  cta: 'Call Now',
   footerAddress: 'Company Address',
 }, action) => {
   switch (action.type) {
