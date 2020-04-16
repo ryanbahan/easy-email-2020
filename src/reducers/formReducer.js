@@ -4,7 +4,7 @@ export const formReducer = (state = {
   mainImage: 'https://via.placeholder.com/1200x600',
   mainImageTagline: 'Download our new e-book for free!',
   mainImageButtonCopy: 'Free Download',
-  content: `Hey there, I'm the VP of Business Development here at Devetry – I see you downloaded our "Make Your Software Dream Team a Reality" ebook. I'd love to learn more about your company and what you do there. What would be the best time for a 15-minute phone call?`,
+  content: `Happy Easter! And happy birthday to us! 2 years ago, we launched the Darkglass Ultra plugin. Since then we've launched a further 7 plugins. We've got plenty more on our roadmap (s o o n), and we can't wait to show you the Quad Cortex later this year! We'd love to throw a big party, but since nobody can go outside, we're just going to discount all our plugins instead! Get 30% off all plugins until April 18th 00:00 EEST.`,
   cta: 'Call Now',
   footerAddress: 'Company Address',
 }, action) => {

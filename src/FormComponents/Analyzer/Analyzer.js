@@ -1,19 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { parseTones } from '../../utils';
 
 class Analyzer extends React.Component {
   constructor() {
     super();
     this.state = {
-      overall: ""
+      documentTones: ""
     }
   }
 
   componentDidMount() {
-    this.getItems();
+    this.requestTones();
   }
 
-  getItems = async () => {
+  requestTones = async () => {
     const data = {toneInput: {text: this.props.content}}
 
     const res = await fetch("http://localhost:3000/api/tone", {
@@ -25,8 +26,8 @@ class Analyzer extends React.Component {
     });
 
     const toneResponse = await res.json();
-    this.setState({overall: toneResponse.document_tone.tones})
-    console.log(toneResponse);
+    const tones = parseTones(toneResponse);
+    this.setState({documentTones: tones});
   }
 
   render() {
