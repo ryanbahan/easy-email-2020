@@ -1,58 +1,30 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { requestTones } from '../../utils';
-import Chart from 'chart.js';
+import { requestTones, createChart } from '../../utils';
 import './Analyzer.css';
 
 class Analyzer extends React.Component {
   constructor() {
     super();
-    this.chartRef = React.createRef();
-    this.state = {
-      documentTones: "",
-    }
+    this.contentRef = React.createRef();
+    this.ctaRef = React.createRef();
+    this.taglineRef = React.createRef();
   }
 
   async componentDidMount() {
     const contentTones = await requestTones(this.props.content);
-    const myChartRef = this.chartRef.current.getContext("2d");
+    const taglineTones = await requestTones(this.props.tagline);
+    const taglineButtonTones = await requestTones(this.props.tagLineButton);
+    const taglineAndButtonTones = taglineTones.concat(taglineButtonTones);
+    const ctaTones = await requestTones(this.props.cta);
 
-    const myChart = new Chart(myChartRef, {
-    type: 'bar',
-    data: {
-        labels: contentTones.map(tone => tone.tone_name),
-        datasets: [{
-            label: 'Sentiment Strength',
-            data: contentTones.map(tone => (tone.score * 100).toFixed()),
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 0
-      }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                  }
-                }]
-              }
-            }
-          });
+    const contentRef = this.contentRef.current.getContext("2d");
+    const taglineRef = this.taglineRef.current.getContext("2d");
+    const ctaRef = this.ctaRef.current.getContext("2d");
+
+    createChart(contentRef, contentTones);
+    createChart(taglineRef, taglineAndButtonTones);
+    createChart(ctaRef, ctaTones);
   }
 
   render() {
@@ -60,8 +32,19 @@ class Analyzer extends React.Component {
       <div className="tone-analysis-view">
         <h2>Content Sentiment</h2>
         <canvas
-          id="tone-chart"
-          ref={this.chartRef}
+          ref={this.contentRef}
+          style={{maxWidth: "50rem", maxHeight: "30rem"}}
+        >
+        </canvas>
+        <h2>Tagline Sentiment</h2>
+        <canvas
+          ref={this.taglineRef}
+          style={{maxWidth: "50rem", maxHeight: "30rem"}}
+        >
+        </canvas>
+        <h2>Call-to-action Sentiment</h2>
+        <canvas
+          ref={this.ctaRef}
           style={{maxWidth: "50rem", maxHeight: "30rem"}}
         >
         </canvas>
@@ -73,6 +56,7 @@ class Analyzer extends React.Component {
 const mapStateToProps = state => ({
   content: state.form.content,
   tagline: state.form.mainImageTagline,
+  tagLineButton: state.form.mainImageButtonCopy,
   cta: state.form.cta,
 });
 
