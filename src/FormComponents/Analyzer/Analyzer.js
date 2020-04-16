@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { parseTones } from '../../utils';
+import { requestTones } from '../../utils';
 import Chart from 'chart.js';
 import './Analyzer.css';
 
@@ -14,16 +14,16 @@ class Analyzer extends React.Component {
   }
 
   async componentDidMount() {
-    const tones = await this.requestTones();
+    const contentTones = await requestTones(this.props.content);
     const myChartRef = this.chartRef.current.getContext("2d");
 
-    var myChart = new Chart(myChartRef, {
+    const myChart = new Chart(myChartRef, {
     type: 'bar',
     data: {
-        labels: tones.map(tone => tone.tone_name),
+        labels: contentTones.map(tone => tone.tone_name),
         datasets: [{
             label: 'Sentiment Strength',
-            data: tones.map(tone => (tone.score * 100).toFixed()),
+            data: contentTones.map(tone => (tone.score * 100).toFixed()),
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -40,35 +40,19 @@ class Analyzer extends React.Component {
                 'rgba(153, 102, 255, 1)',
                 'rgba(255, 159, 64, 1)'
             ],
-            borderWidth: 1
-        }]
+            borderWidth: 0
+      }]
     },
     options: {
         scales: {
             yAxes: [{
                 ticks: {
                     beginAtZero: true
-                }
-            }]
-        }
-    }
-});
-  }
-
-  requestTones = async () => {
-    const data = {toneInput: {text: this.props.content}}
-
-    const res = await fetch("http://localhost:3000/api/tone", {
-      body: JSON.stringify(data),
-      headers: {
-        "Content-Type": "application/json"
-      },
-      method: "POST"
-    });
-
-    const toneResponse = await res.json();
-    const tones = parseTones(toneResponse);
-    return tones;
+                  }
+                }]
+              }
+            }
+          });
   }
 
   render() {
