@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { parseTones } from '../../utils';
 import Chart from 'chart.js';
+import './Analyzer.css';
 
 class Analyzer extends React.Component {
   constructor() {
@@ -12,17 +13,17 @@ class Analyzer extends React.Component {
     }
   }
 
-  componentDidMount() {
-    this.requestTones();
+  async componentDidMount() {
+    const tones = await this.requestTones();
     const myChartRef = this.chartRef.current.getContext("2d");
 
     var myChart = new Chart(myChartRef, {
     type: 'bar',
     data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: tones.map(tone => tone.tone_name),
         datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            label: 'Sentiment Strength',
+            data: tones.map(tone => (tone.score * 100).toFixed()),
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -67,16 +68,17 @@ class Analyzer extends React.Component {
 
     const toneResponse = await res.json();
     const tones = parseTones(toneResponse);
-    this.setState({documentTones: tones});
+    return tones;
   }
 
   render() {
     return (
       <div className="tone-analysis-view">
+        <h2>Content Sentiment</h2>
         <canvas
           id="tone-chart"
           ref={this.chartRef}
-          style={{width: "50rem", height: "30rem", border: "solid 1px black"}}
+          style={{maxWidth: "50rem", maxHeight: "30rem"}}
         >
         </canvas>
       </div>
