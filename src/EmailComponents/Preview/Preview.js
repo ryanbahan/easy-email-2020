@@ -4,6 +4,7 @@ import EmailImage from '../EmailImage/EmailImage';
 import EmailImageTagline from '../EmailImageTagline/EmailImageTagline';
 import EmailContent from '../EmailContent/EmailContent';
 import EmailFooter from '../EmailFooter/EmailFooter';
+import EmailCTA from '../EmailCTA/EmailCTA';
 import './Preview.css';
 
 export default function Preview(props) {
@@ -13,6 +14,7 @@ export default function Preview(props) {
       <EmailImage />
       <EmailImageTagline />
       <EmailContent />
+      <EmailCTA />
       <EmailFooter />
     </section>
   )
