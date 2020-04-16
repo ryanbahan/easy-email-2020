@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { requestTones, createChart } from '../../utils';
 import './Analyzer.css';
+import EmailImageTagline from '../../EmailComponents/EmailImageTagline/EmailImageTagline';
+import EmailContent from '../../EmailComponents/EmailContent/EmailContent';
 
 class Analyzer extends React.Component {
   constructor() {
@@ -17,12 +19,12 @@ class Analyzer extends React.Component {
     const taglineButtonTones = await requestTones(this.props.tagLineButton);
     const taglineAndButtonTones = taglineTones.concat(taglineButtonTones);
     const ctaTones = await requestTones(this.props.cta);
-
+    
     const contentRef = this.contentRef.current.getContext("2d");
     const taglineRef = this.taglineRef.current.getContext("2d");
     const ctaRef = this.ctaRef.current.getContext("2d");
 
-    createChart(contentRef, contentTones);
+    createChart(contentRef, contentTones, "doughnut");
     createChart(taglineRef, taglineAndButtonTones);
     createChart(ctaRef, ctaTones);
   }
@@ -31,12 +33,18 @@ class Analyzer extends React.Component {
     return (
       <div className="tone-analysis-view">
         <h2>Content Sentiment</h2>
+        <div className="email-content-wrapper">
+          <EmailContent />
+        </div>
         <canvas
           ref={this.contentRef}
           style={{maxWidth: "50rem", maxHeight: "30rem"}}
         >
         </canvas>
         <h2>Tagline Sentiment</h2>
+          <div className="email-tagline-wrapper">
+        <EmailImageTagline />
+        </div>
         <canvas
           ref={this.taglineRef}
           style={{maxWidth: "50rem", maxHeight: "30rem"}}
