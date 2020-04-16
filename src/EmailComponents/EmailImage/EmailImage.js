@@ -7,13 +7,14 @@ function EmailImage(
     mainImageTagline,
     mainImageButtonCopy,
     mainImageButtonColor,
-    mainImageButtonFontColor
+    mainImageButtonFontColor,
+    active,
   }) {
-  return (
+  return active ? (
     <section style={{display: "flex"}}>
       <img src={mainImage} style={{width: "100%", margin: "0", height: "100%"}}/>
     </section>
-  )
+  ) : null
 }
 
 const mapStateToProps = state => ({
@@ -22,6 +23,7 @@ const mapStateToProps = state => ({
   mainImageButtonCopy: state.form.mainImageButtonCopy,
   mainImageButtonColor: state.form.mainImageButtonColor,
   mainImageButtonFontColor: state.form.mainImageButtonFontColor,
+  active: state.visibility["Main Image"],
 });
 
 export default connect(mapStateToProps)(EmailImage);

@@ -8,8 +8,10 @@ function EmailImageTagline(
     mainImageButtonCopy,
     mainImageButtonColor,
     mainImageFontColor,
-    mainImageButtonFontColor
+    mainImageButtonFontColor,
+    active
   }) {
+
   const buttonStyle = {
     backgroundColor: mainImageButtonColor,
     border: "solid 0.5px rgba(0,0,0,0.25)",
@@ -34,12 +36,12 @@ function EmailImageTagline(
     color: mainImageFontColor,
   };
 
-  return (
+  return active ? (
     <section className="email-image-tagline" style={sectionStyle}>
       <p>{mainImageTagline}</p>
       <button style={buttonStyle}>{mainImageButtonCopy}</button>
     </section>
-  )
+  ) : null
 }
 
 const mapStateToProps = state => ({
@@ -49,6 +51,7 @@ const mapStateToProps = state => ({
   mainImageButtonColor: state.form.mainImageButtonColor,
   mainImageFontColor: state.form.mainImageFontColor,
   mainImageButtonFontColor: state.form.mainImageButtonFontColor,
+  active: state.visibility["Image Tagline"],
 });
 
 export default connect(mapStateToProps)(EmailImageTagline);

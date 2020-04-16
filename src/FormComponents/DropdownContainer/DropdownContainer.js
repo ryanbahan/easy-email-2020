@@ -8,7 +8,6 @@ class DropdownContainer extends React.Component {
   constructor() {
     super();
     this.state = {
-      active: true,
       dropdown: false,
     }
   }
@@ -26,7 +25,7 @@ class DropdownContainer extends React.Component {
       <div className="dropdown-wrapper">
         <div className="dropdown-container">
           <div className="title-wrapper">
-            <input type="checkbox" className="visibility-toggle" onClick={() => this.toggleChecked()} defaultChecked/>
+            <input type="checkbox" className="visibility-toggle" onClick={() => this.toggleChecked()} defaultChecked={this.props.active} />
             {this.props.title}
           </div>
           <p className="dropdown-toggle" onClick={() => this.toggleDropdown()}>+</p>
@@ -44,8 +43,8 @@ const mapDispatchToProps = (dispatch) => ({
   toggleVisibility: (title, bool) => dispatch(toggleVisibility(title, bool))
 })
 
-const mapStateToProps = (state, ownProps) => {
-  return {active: state.visibility[ownProps.title]}
-}
+const mapStateToProps = (state, ownProps) => ({
+  active: state.visibility[ownProps.title]
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(DropdownContainer);
