@@ -1,10 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-function Analyzer({ content, tagline, cta }) {
+class Analyzer extends React.Component {
 
-  const getItems = async () => {
-    const data = {toneInput: {text: content}}
+  componentDidMount() {
+    this.getItems();
+  }
+
+  getItems = async () => {
+    const data = {toneInput: {text: this.props.content}}
 
     fetch("http://localhost:3000/api/tone", {
       body: JSON.stringify(data),
@@ -15,7 +19,12 @@ function Analyzer({ content, tagline, cta }) {
     }).then(res => res.json()).then(data => console.log(data))
   }
 
-  return <button onClick={() => getItems()}>Analyze Message</button>
+  render() {
+    return (
+      <div className="tone-analysis-view">
+      </div>
+    )
+  }
 }
 
 const mapStateToProps = state => ({
