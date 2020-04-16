@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-function EmailContent({ cta, buttonColor, buttonFontColor }) {
+function EmailContent({ cta, buttonColor, buttonFontColor, active }) {
   const buttonStyle = {
     margin: "1rem 0",
     padding: "0.75rem 1.25rem",
@@ -14,17 +14,18 @@ function EmailContent({ cta, buttonColor, buttonFontColor }) {
     fontSize: "1rem",
   }
 
-  return (
+  return active ? (
       <div className="email-cta" style={{display: "flex", justifyContent: "center"}}>
         <button style={buttonStyle}>{cta}</button>
       </div>
-  )
+  ) : null
 }
 
 const mapStateToProps = state => ({
   cta: state.form.cta,
   buttonColor: state.form.ctaButtonColor,
   buttonFontColor: state.form.ctaButtonFontColor,
+  active: state.visibility["Main Content"],
 })
 
 export default connect(mapStateToProps)(EmailContent);
