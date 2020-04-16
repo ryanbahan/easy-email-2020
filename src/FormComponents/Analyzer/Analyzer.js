@@ -4,9 +4,6 @@ import { connect } from 'react-redux';
 function Analyzer({ content, tagline, cta }) {
 
   const getItems = async () => {
-    const email = document.querySelector('.preview').outerHTML;
-    await navigator.clipboard.writeText(email);
-
     const data = {toneInput: {text: content}}
 
     fetch("http://localhost:3000/api/tone", {

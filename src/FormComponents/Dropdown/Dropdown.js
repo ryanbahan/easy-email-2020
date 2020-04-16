@@ -10,13 +10,10 @@ export default class Dropdown extends React.Component {
     switch (item.component) {
       case "Colorpicker":
         return <Colorpicker store={item.store} />
-        break
       case "TextField":
         return <TextField store={item.store} />
-        break
       case "FileUploader":
         return <FileUploader store={item.store} />
-        break
       default:
         return null;
     }
