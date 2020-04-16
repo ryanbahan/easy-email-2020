@@ -1,7 +1,7 @@
 import React from 'react';
 import './Builder.css';
 import DropdownContainer from '../DropdownContainer/DropdownContainer';
-import Analyzer from '../Analyzer/Analyzer';
+import { Link } from 'react-router-dom';
 import Exporter from '../Exporter/Exporter';
 
 export const Builder = props => {
@@ -21,7 +21,9 @@ export const Builder = props => {
     </div>
     <div className="buttons-wrapper">
       <Exporter />
-      <Analyzer />
+      <Link to="/tone-analysis">
+        <button>Analyze Tone</button>
+      </Link>
     </div>
   </section>
   )
