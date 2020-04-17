@@ -26,7 +26,7 @@ class DropdownContainer extends React.Component {
         <div className="dropdown-container">
           <div className="title-wrapper">
             <input type="checkbox" className="visibility-toggle" onClick={() => this.toggleChecked()} defaultChecked={this.props.active} />
-            {this.props.title}
+            <h4 style={{fontWeight: "500", fontSize: "1.1rem", padding: "0", margin: "0"}}>{this.props.title}</h4>
           </div>
           <p className="dropdown-toggle" onClick={() => this.toggleDropdown()}>+</p>
         </div>

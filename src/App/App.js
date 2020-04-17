@@ -4,7 +4,7 @@ import { Builder } from '../FormComponents/Builder/Builder';
 import { PreviewContainer } from '../EmailComponents/PreviewContainer/PreviewContainer';
 import { DefaultTemplate } from '../Templates/DefaultTemplate';
 import { Route } from 'react-router-dom';
-import Analyzer from '../FormComponents/Analyzer/Analyzer';
+import Analyzer from '../Analyzer/Analyzer';
 
 function App() {
   return (

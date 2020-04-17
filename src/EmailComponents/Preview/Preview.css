@@ -5,4 +5,5 @@
   max-height: 50rem;
   overflow: scroll;
   min-height: 5rem;
+  max-height: 80vh;
 }
