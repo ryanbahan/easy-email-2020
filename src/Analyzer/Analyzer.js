@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { requestTones, createChart } from '../utils';
 import './Analyzer.css';
+import { Link } from 'react-router-dom';
 import EmailImageTagline from '../EmailComponents/EmailImageTagline/EmailImageTagline';
 import EmailContent from '../EmailComponents/EmailContent/EmailContent';
 import EmailCTA from '../EmailComponents/EmailCTA/EmailCTA';
@@ -15,24 +16,27 @@ class Analyzer extends React.Component {
   }
 
   async componentDidMount() {
-    // const contentTones = await requestTones(this.props.content);
-    // const taglineTones = await requestTones(this.props.tagline);
-    // const taglineButtonTones = await requestTones(this.props.tagLineButton);
-    // const taglineAndButtonTones = taglineTones.concat(taglineButtonTones);
-    // const ctaTones = await requestTones(this.props.cta);
-    //
-    // const contentRef = this.contentRef.current.getContext("2d");
-    // const taglineRef = this.taglineRef.current.getContext("2d");
-    // const ctaRef = this.ctaRef.current.getContext("2d");
-    //
-    // createChart(contentRef, contentTones, "doughnut");
-    // createChart(taglineRef, taglineAndButtonTones);
-    // createChart(ctaRef, ctaTones);
+    const contentTones = await requestTones(this.props.content);
+    const taglineTones = await requestTones(this.props.tagline);
+    const taglineButtonTones = await requestTones(this.props.tagLineButton);
+    const taglineAndButtonTones = taglineTones.concat(taglineButtonTones);
+    const ctaTones = await requestTones(this.props.cta);
+
+    const contentRef = this.contentRef.current.getContext("2d");
+    const taglineRef = this.taglineRef.current.getContext("2d");
+    const ctaRef = this.ctaRef.current.getContext("2d");
+
+    createChart(contentRef, contentTones, "doughnut");
+    createChart(taglineRef, taglineAndButtonTones);
+    createChart(ctaRef, ctaTones);
   }
 
   render() {
     return (
       <div className="tone-analysis-view">
+        <Link to="/">
+          <button className="back">← Back</button>
+        </Link>
         <h2>Content Sentiment</h2>
         <div className="email-content-wrapper">
           <EmailContent />
