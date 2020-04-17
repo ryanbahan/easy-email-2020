@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { requestTones, createChart } from '../../utils';
+import { requestTones, createChart } from '../utils';
 import './Analyzer.css';
-import EmailImageTagline from '../../EmailComponents/EmailImageTagline/EmailImageTagline';
-import EmailContent from '../../EmailComponents/EmailContent/EmailContent';
-import EmailCTA from '../../EmailComponents/EmailCTA/EmailCTA';
+import EmailImageTagline from '../EmailComponents/EmailImageTagline/EmailImageTagline';
+import EmailContent from '../EmailComponents/EmailContent/EmailContent';
+import EmailCTA from '../EmailComponents/EmailCTA/EmailCTA';
 
 class Analyzer extends React.Component {
   constructor() {
