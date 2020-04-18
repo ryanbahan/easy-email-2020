@@ -1,0 +1,16 @@
+.loading-wrapper {
+  position: absolute;
+  margin-top: -2.75%;
+  min-width: 100vw;
+  min-height: 105vh;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 5rem;
+}
+
+.fa-spinner {
+  margin-top: -5%;
+}
