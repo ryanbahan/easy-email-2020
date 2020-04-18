@@ -1,26 +1,5 @@
 import Chart from 'chart.js';
 
-export const parseTones = tones => {
-  const documentTones = tones.document_tone.tones;
-  return documentTones;
-}
-
-export const requestTones = async (content) => {
-  const data = {toneInput: {text: content}}
-
-  const res = await fetch("https://easy-email.mybluemix.net/api/tone", {
-    body: JSON.stringify(data),
-    headers: {
-      "Content-Type": "application/json"
-    },
-    method: "POST"
-  });
-
-  const toneResponse = await res.json();
-  const tones = parseTones(toneResponse);
-  return tones;
-}
-
 export const createChart = (ref, data, type="bar") => (new Chart(ref, {
 type: type,
 data: {

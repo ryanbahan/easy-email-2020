@@ -1,10 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { requestTones, createChart } from '../utils';
+import { isLoading, hasError, clearError } from '../actions';
+import { createChart } from '../utils/createChart';
+import { requestTones } from '../utils/requestTones';
 import './Analyzer.css';
 import EmailImageTagline from '../EmailComponents/EmailImageTagline/EmailImageTagline';
 import EmailContent from '../EmailComponents/EmailContent/EmailContent';
 import EmailCTA from '../EmailComponents/EmailCTA/EmailCTA';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 class Analyzer extends React.Component {
   constructor() {
@@ -15,25 +18,32 @@ class Analyzer extends React.Component {
   }
 
   async componentDidMount() {
-    // const contentTones = await requestTones(this.props.content);
-    // const taglineTones = await requestTones(this.props.tagline);
-    // const taglineButtonTones = await requestTones(this.props.tagLineButton);
-    // const taglineAndButtonTones = taglineTones.concat(taglineButtonTones);
-    // const ctaTones = await requestTones(this.props.cta);
-    //
-    // const contentRef = this.contentRef.current.getContext("2d");
-    // const taglineRef = this.taglineRef.current.getContext("2d");
-    // const ctaRef = this.ctaRef.current.getContext("2d");
-    //
-    // createChart(contentRef, contentTones, "doughnut");
-    // createChart(taglineRef, taglineAndButtonTones);
-    // createChart(ctaRef, ctaTones);
+    this.props.isLoading(true);
+    try {
+      const contentTones = await requestTones(this.props.content);
+      const taglineTones = await requestTones(this.props.tagline);
+      const taglineButtonTones = await requestTones(this.props.tagLineButton);
+      const taglineAndButtonTones = taglineTones.concat(taglineButtonTones);
+      const ctaTones = await requestTones(this.props.cta);
+
+      const contentRef = this.contentRef.current.getContext("2d");
+      const taglineRef = this.taglineRef.current.getContext("2d");
+      const ctaRef = this.ctaRef.current.getContext("2d");
+
+      createChart(contentRef, contentTones, "doughnut");
+      createChart(taglineRef, taglineAndButtonTones);
+      createChart(ctaRef, ctaTones);
+    } catch(err) {
+      this.props.hasError(err);
+    }
+
+    this.props.isLoading(false);
   }
 
   render() {
     return (
       <div className="tone-analysis-view">
-      <i className="fas fa-spinner fa-pulse"></i>
+      {this.props.loading && <LoadingSpinner />}
         <h2>Content Sentiment</h2>
         <div className="email-content-wrapper">
           <EmailContent />
@@ -66,11 +76,18 @@ class Analyzer extends React.Component {
   }
 }
 
+const mapDispatchToProps = dispatch => ({
+  isLoading: bool => dispatch(isLoading(bool)),
+  hasError: err => dispatch(hasError(err)),
+  clearError: () => dispatch(clearError()),
+})
+
 const mapStateToProps = state => ({
   content: state.form.content,
   tagline: state.form.mainImageTagline,
   tagLineButton: state.form.mainImageButtonCopy,
   cta: state.form.cta,
+  loading: state.loading,
 });
 
-export default connect(mapStateToProps)(Analyzer);
+export default connect(mapStateToProps, mapDispatchToProps)(Analyzer);
