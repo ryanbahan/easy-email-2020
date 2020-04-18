@@ -33,7 +33,7 @@ class Analyzer extends React.Component {
   render() {
     return (
       <div className="tone-analysis-view">
-      <i class="fas fa-spinner fa-pulse"></i>
+      <i className="fas fa-spinner fa-pulse"></i>
         <h2>Content Sentiment</h2>
         <div className="email-content-wrapper">
           <EmailContent />
