@@ -8,7 +8,7 @@ export const parseTones = tones => {
 export const requestTones = async (content) => {
   const data = {toneInput: {text: content}}
 
-  const res = await fetch("http://localhost:3000/api/tone", {
+  const res = await fetch("https://easy-email.mybluemix.net/api/tone", {
     body: JSON.stringify(data),
     headers: {
       "Content-Type": "application/json"
