@@ -8,9 +8,17 @@ export const toggleVisibility = bool => ({
   payload: bool,
 })
 
-export const isLoading = bool => {
-  return {
+export const isLoading = bool => ({
   type: "IS_LOADING",
   payload: bool,
-}
-}
+})
+
+export const hasError = err => ({
+  type: "ERROR",
+  payload: err,
+})
+
+export const clearError = () => ({
+  type: "CLEAR_ERROR",
+  payload: false,
+})

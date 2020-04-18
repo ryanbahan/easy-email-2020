@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { isLoading } from '../actions';
-import { requestTones, createChart } from '../utils';
+import { isLoading, hasError, clearError } from '../actions';
+import { createChart } from '../utils';
+import { requestTones } from '../requestTones';
 import './Analyzer.css';
 import EmailImageTagline from '../EmailComponents/EmailImageTagline/EmailImageTagline';
 import EmailContent from '../EmailComponents/EmailContent/EmailContent';
@@ -18,20 +19,26 @@ class Analyzer extends React.Component {
 
   async componentDidMount() {
     this.props.isLoading(true);
-    const contentTones = await requestTones(this.props.content);
-    const taglineTones = await requestTones(this.props.tagline);
-    const taglineButtonTones = await requestTones(this.props.tagLineButton);
-    const taglineAndButtonTones = taglineTones.concat(taglineButtonTones);
-    const ctaTones = await requestTones(this.props.cta);
-    
-    const contentRef = this.contentRef.current.getContext("2d");
-    const taglineRef = this.taglineRef.current.getContext("2d");
-    const ctaRef = this.ctaRef.current.getContext("2d");
-
-    createChart(contentRef, contentTones, "doughnut");
-    createChart(taglineRef, taglineAndButtonTones);
-    createChart(ctaRef, ctaTones);
-    this.props.isLoading(false);
+    try {
+      let test = await requestTones(this.props.content);
+    } catch(err) {
+      await this.props.hasError(err);
+      this.props.clearError(err);
+    }
+    // const contentTones = await requestTones(this.props.content);
+    // const taglineTones = await requestTones(this.props.tagline);
+    // const taglineButtonTones = await requestTones(this.props.tagLineButton);
+    // const taglineAndButtonTones = taglineTones.concat(taglineButtonTones);
+    // const ctaTones = await requestTones(this.props.cta);
+    //
+    // const contentRef = this.contentRef.current.getContext("2d");
+    // const taglineRef = this.taglineRef.current.getContext("2d");
+    // const ctaRef = this.ctaRef.current.getContext("2d");
+    //
+    // createChart(contentRef, contentTones, "doughnut");
+    // createChart(taglineRef, taglineAndButtonTones);
+    // createChart(ctaRef, ctaTones);
+    // this.props.isLoading(false);
   }
 
   render() {
@@ -71,7 +78,9 @@ class Analyzer extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  isLoading: bool => dispatch(isLoading(bool))
+  isLoading: bool => dispatch(isLoading(bool)),
+  hasError: err => dispatch(hasError(err)),
+  clearError: () => dispatch(clearError()),
 })
 
 const mapStateToProps = state => ({
