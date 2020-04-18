@@ -12,7 +12,7 @@ function EmailImage(
   }) {
   return active ? (
     <section style={{display: "flex"}}>
-      <img src={mainImage} style={{width: "100%", margin: "0", height: "100%"}}/>
+      <img src={mainImage} alt="" style={{width: "100%", margin: "0", height: "100%"}}/>
     </section>
   ) : null
 }
