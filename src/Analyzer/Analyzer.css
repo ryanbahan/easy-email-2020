@@ -5,6 +5,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+}
+
+.back {
+  padding: 0.5rem 1rem;
+  border: solid o.5px rgba(0,0,0,0.25);
+  border-radius: 0.25rem;
+  position: absolute;
+  top: 0;
+  left: 5rem;
+  cursor: pointer;
 }
 
 .email-content-wrapper {
