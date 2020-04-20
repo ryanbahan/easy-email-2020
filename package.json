@@ -7,6 +7,7 @@
     "@testing-library/user-event": "^7.2.1",
     "chart.js": "^2.9.3",
     "jest-cli": "^25.4.0",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-color": "^2.18.0",
     "react-dom": "^16.13.1",
