@@ -1,10 +1,6 @@
-export const visibilityReducer = (state = {
-  "Header": true,
-  "Main Image": true,
-  "Image Tagline": true,
-  "Main Content": true,
-  "Footer": true,
-}, action) => {
+import { DefaultVisibilityState } from '../Templates/DefaultVisibilityState';
+
+export const visibilityReducer = (state = DefaultVisibilityState, action) => {
   switch (action.type) {
     case 'TOGGLE_VISIBILITY':
       return {...state, ...action.payload};

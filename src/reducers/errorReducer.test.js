@@ -1,5 +1,4 @@
 import { errorReducer } from './errorReducer';
-import { DefaultState } from '../Templates/DefaultState';
 
 describe("errorReducer", () => {
 
