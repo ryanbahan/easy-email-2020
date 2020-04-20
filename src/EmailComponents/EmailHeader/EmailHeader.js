@@ -5,7 +5,7 @@ function EmailHeader({ bgColor, companyImage, companyName, companyFontColor, act
 
   return active ? (
       <header style={{backgroundColor: bgColor, display: "flex", alignItems: "center"}}>
-        <img src={companyImage} alt="" style={{width: "2.5rem", margin: "1rem"}}/>
+        <img src={companyImage} alt="Company logo" style={{width: "2.5rem", margin: "1rem"}}/>
         <p style={{color: companyFontColor, fontWeight: "500", fontSize: "1.075rem"}}>{companyName}</p>
       </header>
   ) : null
