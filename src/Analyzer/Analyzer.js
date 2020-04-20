@@ -18,26 +18,26 @@ class Analyzer extends React.Component {
   }
 
   async componentDidMount() {
-    // this.props.isLoading(true);
-    // try {
-    //   const contentTones = await requestTones(this.props.content);
-    //   const taglineTones = await requestTones(this.props.tagline);
-    //   const taglineButtonTones = await requestTones(this.props.tagLineButton);
-    //   const taglineAndButtonTones = taglineTones.concat(taglineButtonTones);
-    //   const ctaTones = await requestTones(this.props.cta);
-    //
-    //   const contentRef = this.contentRef.current.getContext("2d");
-    //   const taglineRef = this.taglineRef.current.getContext("2d");
-    //   const ctaRef = this.ctaRef.current.getContext("2d");
-    //
-    //   createChart(contentRef, contentTones, "doughnut");
-    //   createChart(taglineRef, taglineAndButtonTones);
-    //   createChart(ctaRef, ctaTones);
-    // } catch(err) {
-    //   this.props.hasError(err);
-    // }
-    //
-    // this.props.isLoading(false);
+    this.props.isLoading(true);
+    try {
+      const contentTones = await requestTones(this.props.content);
+      const taglineTones = await requestTones(this.props.tagline);
+      const taglineButtonTones = await requestTones(this.props.tagLineButton);
+      const taglineAndButtonTones = taglineTones.concat(taglineButtonTones);
+      const ctaTones = await requestTones(this.props.cta);
+
+      const contentRef = this.contentRef.current.getContext("2d");
+      const taglineRef = this.taglineRef.current.getContext("2d");
+      const ctaRef = this.ctaRef.current.getContext("2d");
+
+      createChart(contentRef, contentTones, "doughnut");
+      createChart(taglineRef, taglineAndButtonTones);
+      createChart(ctaRef, ctaTones);
+    } catch(err) {
+      this.props.hasError(err);
+    }
+
+    this.props.isLoading(false);
   }
 
   render() {

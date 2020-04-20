@@ -20,7 +20,5 @@ describe("FileUploader", () => {
 
   it("should render the correct menu items", () => {
     const { getByText, debug } = utils;
-
-    debug();
   })
 });
