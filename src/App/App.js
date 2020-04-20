@@ -7,6 +7,7 @@ import ErrorPage from '../ErrorPage/ErrorPage';
 import { Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Analyzer from '../Analyzer/Analyzer';
+import PropTypes from 'prop-types';
 
 function App(props) {
   return (
@@ -30,8 +31,8 @@ const mapStateToProps = state => ({
   error: state.error,
 })
 
-const mapDispatchToProps = dispatch => ({
+App.propTypes = {
+  error: PropTypes.bool,
+}
 
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps)(App);

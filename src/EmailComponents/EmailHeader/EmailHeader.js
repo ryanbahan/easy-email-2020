@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 function EmailHeader({ bgColor, companyImage, companyName, companyFontColor, active }) {
@@ -18,5 +19,13 @@ const mapStateToProps = state => ({
   bgColor: state.form.headerBGColor,
   active: state.visibility["Header"],
 })
+
+EmailHeader.propTypes = {
+  bgColor: PropTypes.string,
+  companyImage: PropTypes.string,
+  companyName: PropTypes.string,
+  companyFontColor: PropTypes.string,
+  active: PropTypes.bool,
+}
 
 export default connect(mapStateToProps)(EmailHeader);

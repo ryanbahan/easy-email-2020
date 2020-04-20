@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { isLoading, hasError, clearError } from '../actions';
+import { isLoading, hasError } from '../actions';
 import { createChart } from '../utils/createChart';
 import { requestTones } from '../utils/requestTones';
 import './Analyzer.css';
@@ -20,7 +20,7 @@ class Analyzer extends React.Component {
 
   async componentDidMount() {
     this.props.isLoading(true);
-    
+
     try {
       const contentTones = await requestTones(this.props.content);
       const taglineTones = await requestTones(this.props.tagline);
@@ -97,7 +97,6 @@ Analyzer.propTypes = {
   taglineButton: PropTypes.string,
   cta: PropTypes.string,
   loading: PropTypes.bool,
-  isLoading: PropTypes.func,
   isLoading: PropTypes.func,
   hasError: PropTypes.func,
 };

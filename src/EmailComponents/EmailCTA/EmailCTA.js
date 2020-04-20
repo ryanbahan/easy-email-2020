@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 function EmailContent({ cta, buttonColor, buttonFontColor, active }) {
@@ -27,5 +28,12 @@ const mapStateToProps = state => ({
   buttonFontColor: state.form.ctaButtonFontColor,
   active: state.visibility["Main Content"],
 })
+
+EmailContent.propTypes = {
+  cta: PropTypes.string,
+  buttonColor: PropTypes.string,
+  buttonFontColor: PropTypes.string,
+  active: PropTypes.bool,
+}
 
 export default connect(mapStateToProps)(EmailContent);

@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const requestTones = async (content) => {
   const parseTones = tones => {
     const documentTones = tones.document_tone.tones;
