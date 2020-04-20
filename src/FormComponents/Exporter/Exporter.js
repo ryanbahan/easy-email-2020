@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Exporter(props) {
+export default function Exporter() {
 
   const getItems = async () => {
     const email = document.querySelector('.preview').outerHTML;

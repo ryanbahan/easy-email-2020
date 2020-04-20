@@ -2,6 +2,7 @@ import React from 'react';
 import { ChromePicker } from 'react-color';
 import { connect } from 'react-redux';
 import { update } from '../../actions';
+import PropTypes from 'prop-types';
 
 class ColorPicker extends React.Component {
   constructor() {
@@ -61,5 +62,10 @@ class ColorPicker extends React.Component {
 const mapDispatchToProps = dispatch => ({
   update: content => dispatch(update(content))
 })
+
+ColorPicker.propTypes = {
+  store: PropTypes.string,
+  update: PropTypes.func,
+}
 
 export default connect(null, mapDispatchToProps)(ColorPicker);

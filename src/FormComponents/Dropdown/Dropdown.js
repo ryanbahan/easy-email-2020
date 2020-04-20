@@ -3,6 +3,7 @@ import './Dropdown.css';
 import Colorpicker from '../Colorpicker/ColorPicker';
 import FileUploader from '../FileUploader/FileUploader';
 import TextField from '../TextField/TextField';
+import PropTypes from 'prop-types';
 
 export default class Dropdown extends React.Component {
 
@@ -39,4 +40,9 @@ export default class Dropdown extends React.Component {
       </div>
     )
   }
+}
+
+Dropdown.propTypes = {
+  dropdown: PropTypes.bool,
+  formItems: PropTypes.array,
 }

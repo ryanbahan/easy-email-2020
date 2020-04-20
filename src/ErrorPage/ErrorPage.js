@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { clearError } from '../actions';
 import './ErrorPage.css';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class ErrorPage extends React.Component {
 
@@ -31,5 +32,13 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   clearError: () => dispatch(clearError()),
 })
+
+ErrorPage.propTypes = {
+  error: PropTypes.oneOfType([
+  PropTypes.string,
+  PropTypes.bool
+]),
+  clearError: PropTypes.func,
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(ErrorPage);
