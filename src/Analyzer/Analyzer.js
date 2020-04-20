@@ -8,6 +8,7 @@ import EmailImageTagline from '../EmailComponents/EmailImageTagline/EmailImageTa
 import EmailContent from '../EmailComponents/EmailContent/EmailContent';
 import EmailCTA from '../EmailComponents/EmailCTA/EmailCTA';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
+import PropTypes from 'prop-types';
 
 class Analyzer extends React.Component {
   constructor() {
@@ -19,6 +20,7 @@ class Analyzer extends React.Component {
 
   async componentDidMount() {
     this.props.isLoading(true);
+    
     try {
       const contentTones = await requestTones(this.props.content);
       const taglineTones = await requestTones(this.props.tagline);
@@ -79,7 +81,6 @@ class Analyzer extends React.Component {
 const mapDispatchToProps = dispatch => ({
   isLoading: bool => dispatch(isLoading(bool)),
   hasError: err => dispatch(hasError(err)),
-  clearError: () => dispatch(clearError()),
 })
 
 const mapStateToProps = state => ({
@@ -89,5 +90,16 @@ const mapStateToProps = state => ({
   cta: state.form.cta,
   loading: state.loading,
 });
+
+Analyzer.propTypes = {
+  content: PropTypes.string,
+  tagline: PropTypes.string,
+  taglineButton: PropTypes.string,
+  cta: PropTypes.string,
+  loading: PropTypes.bool,
+  isLoading: PropTypes.func,
+  isLoading: PropTypes.func,
+  hasError: PropTypes.func,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Analyzer);

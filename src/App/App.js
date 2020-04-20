@@ -11,7 +11,6 @@ import Analyzer from '../Analyzer/Analyzer';
 function App(props) {
   return (
       <div className="App">
-      {console.log(props)}
         {props.error && <Redirect to="/error" />}
         <Route exact path="/">
           <Builder menus={DefaultTemplate} />
