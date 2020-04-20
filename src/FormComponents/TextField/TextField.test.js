@@ -10,6 +10,13 @@ describe("TextField", () => {
   const store = createStore(rootReducer);
   let utils;
 
+  global.MutationObserver = class {
+    constructor(callback) {}
+    disconnect() {}
+    observe(element, initObject) {}
+    takeRecords() {return {true: true}}
+};
+
   beforeEach(() => {
     utils = render(
       <Provider store={store}>
@@ -18,8 +25,8 @@ describe("TextField", () => {
     );
   })
 
-  it("should render the correct menu items", () => {
-    const { getByText, debug } = utils;
+  it.skip("should render the correct menu items", () => {
+    const { debug } = utils;
 
     debug();
   })

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import Parser from 'html-react-parser';
 
 const EmailContent = ({ cta, buttonColor, buttonFontColor, active }) => {
   const buttonStyle = {
@@ -17,7 +18,7 @@ const EmailContent = ({ cta, buttonColor, buttonFontColor, active }) => {
 
   return active ? (
       <div className="email-cta" style={{display: "flex", justifyContent: "center"}}>
-        <button style={buttonStyle}>{cta}</button>
+        <button style={buttonStyle}>{Parser(cta)}</button>
       </div>
   ) : null
 }

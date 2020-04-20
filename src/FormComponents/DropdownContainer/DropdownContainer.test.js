@@ -12,6 +12,15 @@ describe("DropdownContainer", () => {
   const store = createStore(rootReducer);
   let utils;
 
+  global.MutationObserver = class {
+  constructor(callback) {}
+  disconnect() {}
+  observe(element, initObject) {}
+  takeRecords() {return []}
+  };
+
+  global.document.getSelection = function() {}
+
   beforeEach(() => {
     utils = render(
       <Provider store={store}>
@@ -36,10 +45,9 @@ describe("DropdownContainer", () => {
     const headerTitle = getByText("Header");
     const dropdownToggle = getByText("+");
     const companyLogoLabel = getByText("Company Logo");
-    const fileUploader = getByText("Upload file");
     const companyNameLabel = getByText("Company Name");
-    const textField = getByText("Edit");
-    const submitBtn = getByText("Submit");
+    const edit = getByText("Edit");
+    const fileUploader = getByText("Upload file");
     const fontColorLabel = getByText("Font Color");
     const colorPicker = getAllByText("Pick Color");
     const bgColorLabel = getByText("Background Color");
@@ -47,10 +55,9 @@ describe("DropdownContainer", () => {
     expect(headerTitle).toBeInTheDocument();
     expect(dropdownToggle).toBeInTheDocument();
     expect(companyLogoLabel).toBeInTheDocument();
-    expect(fileUploader).toBeInTheDocument();
     expect(companyNameLabel).toBeInTheDocument();
-    expect(textField).toBeInTheDocument();
-    expect(submitBtn).toBeInTheDocument();
+    expect(edit).toBeInTheDocument();
+    expect(fileUploader).toBeInTheDocument();
     expect(fontColorLabel).toBeInTheDocument();
     expect(colorPicker.length).toEqual(2);
     expect(bgColorLabel).toBeInTheDocument();

@@ -20,7 +20,7 @@ export const DefaultTemplate = [{
     {title: "Background Color", component: "Colorpicker", store: "mainImageTaglineBG"},
     {title: "Font Color", component: "Colorpicker", store: "mainImageFontColor"},
     {title: null},
-    {title: "Button Text", component: "TextField", store: "mainImageButtonCopy"},
+    {title: "Button Text", component: "ButtonCopyField", store: "mainImageButtonCopy"},
     {title: "Button Color", component: "Colorpicker", store: "mainImageButtonColor"},
     {title: "Button Font Color", component: "Colorpicker", store: "mainImageButtonFontColor"},
   ],
@@ -29,7 +29,7 @@ export const DefaultTemplate = [{
   title: "Main Content",
   formItems: [
     {title: "Content Block Text", component: "TextField", store: "content"},
-    {title: "Button Text", component: "TextField", store: "cta"},
+    {title: "Button Text", component: "ButtonCopyField", store: "cta"},
     {title: "Button Color", component: "Colorpicker", store: "ctaButtonColor"},
     {title: "Button Font Color", component: "Colorpicker", store: "ctaButtonFontColor"}
   ],

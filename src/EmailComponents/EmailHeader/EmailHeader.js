@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import Parser from 'html-react-parser';
 
 const EmailHeader = ({
   bgColor,
@@ -12,7 +13,7 @@ const EmailHeader = ({
   return active ? (
       <header style={{backgroundColor: bgColor, display: "flex", alignItems: "center"}}>
         <img src={companyImage} alt="Company logo" style={{width: "2.5rem", margin: "1rem"}}/>
-        <p style={{color: companyFontColor, fontWeight: "500", fontSize: "1.075rem"}}>{companyName}</p>
+        {Parser(companyName)}
       </header>
   ) : null
 }

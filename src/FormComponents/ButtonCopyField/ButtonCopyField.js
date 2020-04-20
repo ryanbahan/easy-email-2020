@@ -1,12 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { update } from '../../actions';
-import './TextField.css';
+import './ButtonCopyField.css';
 import PropTypes from 'prop-types';
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
 
-class TextField extends React.Component {
+class ButtonCopyField extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -30,7 +28,11 @@ class TextField extends React.Component {
           </button>
           <div className={this.state.active ? "modal-wrapper" : "hidden"}>
             <div className="modal">
-              <ReactQuill theme="snow" value={this.props.content} onChange={(value) => this.update(this.props.store, value)}/>
+              <input type="text"
+                style={{padding: "0.25rem 0 0.25rem 0.25rem", width: "calc(100% - 0.25rem)"}}
+                value={this.props.content}
+                onChange={(e) => this.update(this.props.store, e.target.value)}
+              />
             </div>
           </div>
         </>
@@ -46,9 +48,9 @@ const mapDispatchToProps = dispatch => ({
   update: content => dispatch(update(content))
 })
 
-TextField.propTypes = {
+ButtonCopyField.propTypes = {
   store: PropTypes.string,
   update: PropTypes.func,
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(TextField);
+export default connect(mapStateToProps, mapDispatchToProps)(ButtonCopyField);

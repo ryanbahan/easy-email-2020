@@ -3,12 +3,15 @@ import './Dropdown.css';
 import Colorpicker from '../Colorpicker/ColorPicker';
 import FileUploader from '../FileUploader/FileUploader';
 import TextField from '../TextField/TextField';
+import ButtonCopyField from '../ButtonCopyField/ButtonCopyField';
 import PropTypes from 'prop-types';
 
 export default class Dropdown extends React.Component {
 
   getFormComponent = (item) => {
     switch (item.component) {
+      case "ButtonCopyField":
+        return <ButtonCopyField store={item.store} />
       case "Colorpicker":
         return <Colorpicker store={item.store} />
       case "TextField":
