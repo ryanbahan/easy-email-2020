@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 function EmailImageTagline(
@@ -53,5 +54,15 @@ const mapStateToProps = state => ({
   mainImageButtonFontColor: state.form.mainImageButtonFontColor,
   active: state.visibility["Image Tagline"],
 });
+
+EmailImageTagline.propTypes = {
+  mainImageTaglineBG: PropTypes.string,
+  mainImageTagline: PropTypes.string,
+  mainImageButtonCopy: PropTypes.string,
+  mainImageButtonColor: PropTypes.string,
+  mainImageFontColor: PropTypes.string,
+  mainImageButtonFontColor: PropTypes.string,
+  active: PropTypes.bool,
+}
 
 export default connect(mapStateToProps)(EmailImageTagline);

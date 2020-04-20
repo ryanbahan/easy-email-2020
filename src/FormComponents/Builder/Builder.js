@@ -3,6 +3,7 @@ import './Builder.css';
 import DropdownContainer from '../DropdownContainer/DropdownContainer';
 import { Link } from 'react-router-dom';
 import Exporter from '../Exporter/Exporter';
+import PropTypes from 'prop-types';
 
 export const Builder = props => {
 
@@ -27,4 +28,8 @@ export const Builder = props => {
     </div>
   </section>
   )
+}
+
+Builder.propTypes = {
+  menus: PropTypes.array,
 }

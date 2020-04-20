@@ -3,6 +3,7 @@ import './DropdownContainer.css';
 import Dropdown from '../Dropdown/Dropdown';
 import { connect } from 'react-redux';
 import { toggleVisibility } from '../../actions';
+import PropTypes from 'prop-types';
 
 class DropdownContainer extends React.Component {
   constructor() {
@@ -46,5 +47,12 @@ const mapDispatchToProps = (dispatch) => ({
 const mapStateToProps = (state, ownProps) => ({
   active: state.visibility[ownProps.title]
 })
+
+DropdownContainer.propTypes = {
+  formItems: PropTypes.array,
+  title: PropTypes.string,
+  active: PropTypes.bool,
+  toggleVisibility: PropTypes.func,
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(DropdownContainer);

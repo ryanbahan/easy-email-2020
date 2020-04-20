@@ -2,6 +2,7 @@ import React from 'react';
 import './FileUploader.css';
 import { update } from '../../actions';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 class FileUploader extends React.Component {
 
@@ -39,5 +40,10 @@ class FileUploader extends React.Component {
 const mapDispatchToProps = dispatch => ({
   update: content => dispatch(update(content))
 })
+
+FileUploader.propTypes = {
+  store: PropTypes.string,
+  update: PropTypes.func,
+}
 
 export default connect(null, mapDispatchToProps)(FileUploader);

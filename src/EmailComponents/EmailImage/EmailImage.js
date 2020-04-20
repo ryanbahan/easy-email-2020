@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 function EmailImage(
@@ -25,5 +26,14 @@ const mapStateToProps = state => ({
   mainImageButtonFontColor: state.form.mainImageButtonFontColor,
   active: state.visibility["Main Image"],
 });
+
+EmailImage.propTypes = {
+  mainImage: PropTypes.string,
+  mainImageTagline: PropTypes.string,
+  mainImageButtonCopy: PropTypes.string,
+  mainImageButtonColor: PropTypes.string,
+  mainImageButtonFontColor: PropTypes.string,
+  active: PropTypes.bool,
+}
 
 export default connect(mapStateToProps)(EmailImage);

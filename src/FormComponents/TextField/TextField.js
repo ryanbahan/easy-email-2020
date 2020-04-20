@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { update } from '../../actions';
 import './TextField.css';
+import PropTypes from 'prop-types';
 
 class TextField extends React.Component {
   constructor() {
@@ -48,5 +49,10 @@ class TextField extends React.Component {
 const mapDispatchToProps = dispatch => ({
   update: content => dispatch(update(content))
 })
+
+TextField.propTypes = {
+  store: PropTypes.string,
+  update: PropTypes.func,
+}
 
 export default connect(null, mapDispatchToProps)(TextField);

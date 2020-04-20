@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 function EmailFooter({ address, fontColor, bgColor, active }) {
@@ -26,5 +27,12 @@ const mapStateToProps = state => ({
   fontColor: state.form.footerFontColor,
   active: state.visibility["Footer"],
 });
+
+EmailFooter.propTypes = {
+  address: PropTypes.string,
+  fontColor: PropTypes.string,
+  bgColor: PropTypes.string,
+  active: PropTypes.bool,
+}
 
 export default connect(mapStateToProps)(EmailFooter);
