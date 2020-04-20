@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import Parser from 'html-react-parser';
 
 const EmailContent = ({ content, active }) => {
 
   return active ? (
     <section className="email-content" style={{padding: "0 1rem"}}>
-      <p>{content}</p>
+      {Parser(content)}
     </section>
   ) : null
 }

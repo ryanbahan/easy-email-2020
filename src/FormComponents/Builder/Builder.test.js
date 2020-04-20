@@ -12,6 +12,15 @@ describe("Builder", () => {
   const store = createStore(rootReducer);
   let utils;
 
+  global.MutationObserver = class {
+  constructor(callback) {}
+  disconnect() {}
+  observe(element, initObject) {}
+  takeRecords() {return []}
+  };
+  
+  global.document.getSelection = function() {}
+
   beforeEach(() => {
     utils = render(
       <Provider store={store}>

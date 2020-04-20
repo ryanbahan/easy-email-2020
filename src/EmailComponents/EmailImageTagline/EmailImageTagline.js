@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import Parser from 'html-react-parser';
 
 const EmailImageTagline = (
   {
@@ -39,8 +40,8 @@ const EmailImageTagline = (
 
   return active ? (
     <section className="email-image-tagline" style={sectionStyle}>
-      <p>{mainImageTagline}</p>
-      <button style={buttonStyle}>{mainImageButtonCopy}</button>
+      {Parser(mainImageTagline)}
+      <button style={buttonStyle}>{Parser(mainImageButtonCopy)}</button>
     </section>
   ) : null
 }

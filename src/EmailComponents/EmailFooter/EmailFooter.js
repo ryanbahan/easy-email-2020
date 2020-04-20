@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import Parser from 'html-react-parser';
 
 const EmailFooter = ({ address, fontColor, bgColor, active }) => {
 
@@ -16,7 +17,7 @@ const EmailFooter = ({ address, fontColor, bgColor, active }) => {
 
   return active ? (
         <footer style={footerStyle}>
-          <p style={{fontSize: "0.75rem"}}>{address}</p>
+          {Parser(address)}
         </footer>
   ) : null
 }
