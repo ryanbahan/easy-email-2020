@@ -1,6 +1,12 @@
 import Chart from 'chart.js';
 
-export const createChart = (ref, data, type="bar") => (new Chart(ref, {
+export const createChart = (
+  ref,
+  data,
+  type="bar"
+) => (
+
+new Chart(ref, {
 type: type,
 data: {
     labels: data.map(tone => tone.tone_name),

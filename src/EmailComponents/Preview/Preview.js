@@ -7,7 +7,7 @@ import EmailFooter from '../EmailFooter/EmailFooter';
 import EmailCTA from '../EmailCTA/EmailCTA';
 import './Preview.css';
 
-export default function Preview(props) {
+const Preview = () => {
   return (
     <section className="preview">
       <EmailHeader />
@@ -19,3 +19,5 @@ export default function Preview(props) {
     </section>
   )
 }
+
+export default Preview;

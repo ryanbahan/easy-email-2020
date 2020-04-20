@@ -2,7 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-function EmailHeader({ bgColor, companyImage, companyName, companyFontColor, active }) {
+const EmailHeader = ({
+  bgColor,
+  companyImage,
+  companyName,
+  companyFontColor,
+  active }) => {
 
   return active ? (
       <header style={{backgroundColor: bgColor, display: "flex", alignItems: "center"}}>

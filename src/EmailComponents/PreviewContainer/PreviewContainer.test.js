@@ -1,5 +1,5 @@
 import React from 'react';
-import { PreviewContainer } from './PreviewContainer';
+import PreviewContainer from './PreviewContainer';
 import EmailHeader from '../EmailHeader/EmailHeader';
 import EmailImage from '../EmailImage/EmailImage';
 import EmailImageTagline from '../EmailImageTagline/EmailImageTagline';
