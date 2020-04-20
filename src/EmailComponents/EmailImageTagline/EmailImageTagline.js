@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-function EmailImageTagline(
+const EmailImageTagline = (
   {
     mainImageTaglineBG,
     mainImageTagline,
@@ -11,7 +11,7 @@ function EmailImageTagline(
     mainImageFontColor,
     mainImageButtonFontColor,
     active
-  }) {
+  }) => {
 
   const buttonStyle = {
     backgroundColor: mainImageButtonColor,

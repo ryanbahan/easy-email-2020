@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Exporter() {
+const Exporter = () => {
 
   const getItems = async () => {
     const email = document.querySelector('.preview').outerHTML;
@@ -9,3 +9,5 @@ export default function Exporter() {
 
   return <button onClick={() => getItems()}>Export</button>
 }
+
+export default Exporter;

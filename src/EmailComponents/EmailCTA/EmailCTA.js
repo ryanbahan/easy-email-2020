@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-function EmailContent({ cta, buttonColor, buttonFontColor, active }) {
+const EmailContent = ({ cta, buttonColor, buttonFontColor, active }) => {
   const buttonStyle = {
     margin: "1rem 0",
     padding: "0.75rem 1.25rem",

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-function EmailFooter({ address, fontColor, bgColor, active }) {
+const EmailFooter = ({ address, fontColor, bgColor, active }) => {
 
   const footerStyle = {
     display: "flex",

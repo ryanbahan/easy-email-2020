@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 import Exporter from '../Exporter/Exporter';
 import PropTypes from 'prop-types';
 
-export const Builder = props => {
+export const Builder = ({ menus }) => {
 
-  const menuContainers = props.menus.map(menu => (
+  const menuContainers = menus.map(menu => (
     <DropdownContainer
       key={menu.title}
       formItems={menu.formItems}

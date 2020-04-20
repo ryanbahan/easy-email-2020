@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-function EmailImage(
+const EmailImage = (
   {
     mainImage,
     mainImageTagline,
@@ -10,7 +10,8 @@ function EmailImage(
     mainImageButtonColor,
     mainImageButtonFontColor,
     active,
-  }) {
+  }) => {
+    
   return active ? (
     <section style={{display: "flex"}}>
       <img src={mainImage} alt="Main image" style={{width: "100%", margin: "0", height: "100%"}}/>
