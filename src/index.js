@@ -16,7 +16,7 @@ const store = createStore(
 );
 
 ReactDOM.render(
-  <Router>
+  <Router basename={process.env.PUBLIC_URL}>
     <Provider store={store}>
       <React.StrictMode>
         <App />
