@@ -37,3 +37,5 @@ Coding emails is hard. Figuring out if they're worth sending is harder. Easy Ema
 - Run `npm run test` to run the Jest testing suite
 
 ### 5. Deployment
+
+[Easy Email on GH Pages](https://ryanbahan.github.io/easy-email-2020/)
