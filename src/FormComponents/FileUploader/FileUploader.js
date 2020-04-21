@@ -13,14 +13,14 @@ class FileUploader extends React.Component {
       const formData = new FormData()
       formData.append('myFile', file);
 
-        fetch("http://limitless-citadel-48645.herokuapp.com/saveImage", {
+        fetch("https://limitless-citadel-48645.herokuapp.com/saveImage", {
           method: "POST",
           body: formData
         })
         .then(res => res.json())
         .then(data =>
           this.props.update(
-            {[this.props.store]: `http://limitless-citadel-48645.herokuapp.com${data.path}`}
+            {[this.props.store]: `https://limitless-citadel-48645.herokuapp.com${data.path}`}
             )
           )
     }
