@@ -27,34 +27,17 @@ class ColorPicker extends React.Component {
   };
 
   render() {
-    const popover = {
-      position: 'absolute',
-      zIndex: '2',
-    }
-
-    const cover = {
-      position: 'fixed',
-      top: '0px',
-      right: '0px',
-      bottom: '0px',
-      left: '0px',
-    }
-
-    const button = {
-      position: "relative"
-    }
 
     return (
-      <div>
-        <button onClick={ this.handleClick } style={ button }>Pick Color</button>
-        { this.state.displayColorPicker ? <div style={ popover }>
-          <div style={ cover } onClick={ this.handleClose }/>
+      <>
+        <button onClick={ this.handleClick } style={{cursor: "pointer"}}>Pick Color</button>
+        { this.state.displayColorPicker ? <div style={{flexBasis: "100%", display: "flex", justifyContent: "flex-end", marginBottom: "1rem"}}>
           <ChromePicker
             onChange={ this.handleChange }
             color={ this.state.background }
           />
         </div> : null }
-      </div>
+      </>
     )
   }
 }
