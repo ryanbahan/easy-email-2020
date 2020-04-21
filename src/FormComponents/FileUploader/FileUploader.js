@@ -10,20 +10,19 @@ class FileUploader extends React.Component {
     const file = event.target.files[0];
 
     if (file) {
-      const reader = new FileReader();
-      let imgSrc;
+      const formData = new FormData()
+      formData.append('myFile', file);
 
-      reader.onload = async (event) => {
-        imgSrc = await event.target.result;
-        update(imgSrc);
-      };
-
-
-      const update = (imgSrc) => {
-        this.props.update({[this.props.store]: imgSrc});
-      }
-
-      reader.readAsDataURL(file);
+        fetch("http://limitless-citadel-48645.herokuapp.com/saveImage", {
+          method: "POST",
+          body: formData
+        })
+        .then(res => res.json())
+        .then(data =>
+          this.props.update(
+            {[this.props.store]: `http://limitless-citadel-48645.herokuapp.com${data.path}`}
+            )
+          )
     }
   }
 
