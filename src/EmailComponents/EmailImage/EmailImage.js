@@ -11,10 +11,10 @@ const EmailImage = (
     mainImageButtonFontColor,
     active,
   }) => {
-    
+
   return active ? (
     <section style={{display: "flex"}}>
-      <img src={mainImage} alt="Main image" style={{width: "100%", margin: "0", height: "100%"}}/>
+      <img src={mainImage} alt="Main content" style={{width: "100%", margin: "0", height: "100%"}}/>
     </section>
   ) : null
 }

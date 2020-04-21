@@ -18,7 +18,7 @@ describe("EmailImage", () => {
   it("should render the correct content", () => {
     const { getByAltText } = utils;
 
-    const image = getByAltText('Main image');
+    const image = getByAltText('Main content');
 
     expect(image).toBeInTheDocument();
     expect(image.src).toEqual(DefaultState.mainImage);

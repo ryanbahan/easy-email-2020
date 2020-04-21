@@ -2,7 +2,7 @@ export const DefaultTemplate = [{
   title: "Header",
   formItems: [
     {title: "Company Logo", component: "FileUploader", store: "companyImage"},
-    {title: "Company Name", component: "TextField", store: "companyName"},
+    {title: "Company Name", component: "ButtonCopyField", store: "companyName"},
     {title: "Font Color", component: "Colorpicker", store: "companyFontColor"},
     {title: "Background Color", component: "Colorpicker", store: "headerBGColor"},
   ],

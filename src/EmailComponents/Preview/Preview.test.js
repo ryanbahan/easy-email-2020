@@ -26,7 +26,7 @@ describe("Preview", () => {
 
     const companyLogo = getByAltText("Company logo");
     const companyName = getByText(DefaultState.companyName);
-    const image = getByAltText('Main image');
+    const image = getByAltText('Main content');
     const mainImageTagline = getByText(DefaultState.mainImageTagline);
     const mainImageButtonCopy = getByText(DefaultState.mainImageButtonCopy);
     const content = getByText(DefaultState.content);
