@@ -1,8 +1,8 @@
 import React from 'react';
-import { ChromePicker } from 'react-color';
 import { connect } from 'react-redux';
 import { update } from '../../actions';
 import PropTypes from 'prop-types';
+import CustomPicker from './CustomPicker';
 
 class ColorPicker extends React.Component {
   constructor() {
@@ -32,7 +32,7 @@ class ColorPicker extends React.Component {
       <>
         <button onClick={ this.handleClick } style={{cursor: "pointer"}}>Pick Color</button>
         { this.state.displayColorPicker ? <div style={{flexBasis: "100%", display: "flex", justifyContent: "flex-end", marginBottom: "1rem"}}>
-          <ChromePicker
+          <CustomPicker
             onChange={ this.handleChange }
             color={ this.state.background }
           />
