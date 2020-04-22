@@ -1,8 +1,8 @@
 import React from 'react';
-import { ChromePicker } from 'react-color';
 import { connect } from 'react-redux';
 import { update } from '../../actions';
 import PropTypes from 'prop-types';
+import CustomPicker from './CustomPicker';
 
 class ColorPicker extends React.Component {
   constructor() {
@@ -27,34 +27,17 @@ class ColorPicker extends React.Component {
   };
 
   render() {
-    const popover = {
-      position: 'absolute',
-      zIndex: '2',
-    }
-
-    const cover = {
-      position: 'fixed',
-      top: '0px',
-      right: '0px',
-      bottom: '0px',
-      left: '0px',
-    }
-
-    const button = {
-      position: "relative"
-    }
 
     return (
-      <div>
-        <button onClick={ this.handleClick } style={ button }>Pick Color</button>
-        { this.state.displayColorPicker ? <div style={ popover }>
-          <div style={ cover } onClick={ this.handleClose }/>
-          <ChromePicker
+      <>
+        <button onClick={ this.handleClick } style={{cursor: "pointer"}}>Pick Color</button>
+        { this.state.displayColorPicker ? <div style={{flexBasis: "100%", display: "flex", justifyContent: "flex-end", marginBottom: "1rem"}}>
+          <CustomPicker
             onChange={ this.handleChange }
             color={ this.state.background }
           />
         </div> : null }
-      </div>
+      </>
     )
   }
 }
