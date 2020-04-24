@@ -36,16 +36,12 @@ const EmailImageTagline = (
   };
 
   return active ? (
-    <section className="email-image-tagline" style={sectionStyle}>
-      {parse(mainImageTagline, {
-        replace: domNode => {
-          if (domNode.name === 'p') {
-            return React.createElement("p", {style: {display: "inline", border: "solid 1px black", verticalAlign: "top"}}, domNode.children[0].data)
-          }
-        }
-      })}
-      <button style={buttonStyle}>{parse(mainImageButtonCopy)}</button>
-    </section>
+    <table border="0" cellSpacing="0" cellPadding="0" width="600px" height="85px">
+      <tr>
+        <td width="500px"><p style={{paddingLeft: "16px"}}>Get your free download now!</p></td>
+        <td><button>Order Now</button></td>
+      </tr>
+    </table>
   ) : null
 }
 

@@ -3,4 +3,6 @@
   border-radius: 0.15rem;
   width: 600px;
   min-height: 5rem;
+  max-height: 95vh;
+  overflow: scroll;
 }
