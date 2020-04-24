@@ -10,9 +10,9 @@ const EmailHeader = ({
   active }) => {
 
   return active ? (
-      <header style={{backgroundColor: bgColor, display: "flex", alignItems: "center"}}>
-        <img src={companyImage} alt="Company logo" style={{width: "2.5rem", margin: "1rem"}}/>
-          <p style={{color: companyFontColor, fontWeight: "500", fontSize: "1.125rem"}}>{companyName}</p>
+      <header style={{backgroundColor: bgColor}}>
+        <img src={companyImage} alt="Company logo" style={{width: "50px", display: "inline", verticalAlign: "middle", padding: "2.5% 2.5% 2.5% 0"}}/>
+        <p style={{color: companyFontColor, display: "inline", verticalAlign: "middle"}}>{companyName}</p>
       </header>
   ) : null
 }
