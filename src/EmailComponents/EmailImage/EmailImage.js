@@ -16,7 +16,7 @@ const EmailImage = (
     <table border="0" cellSpacing="0" cellPadding="0" width="600px">
       <tbody>
         <tr>
-            <td><img src={mainImage} alt="Main content" style={{width: "100%"}} /></td>
+          <td><img src={mainImage} alt="Main content" style={{width: "600px"}} /></td>
         </tr>
       </tbody>
     </table>

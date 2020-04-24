@@ -16,7 +16,6 @@ const EmailImageTagline = (
 
   const buttonStyle = {
     backgroundColor: mainImageButtonColor,
-    display: "inline",
     border: "solid 0.5px rgba(0,0,0,0.25)",
     padding: "0.5rem 1rem",
     fontSize: "0.85rem",
@@ -29,17 +28,19 @@ const EmailImageTagline = (
     float: "right",
   };
 
-  const sectionStyle = {
-    backgroundColor: mainImageTaglineBG,
-    color: mainImageFontColor,
-    width: "600px",
-  };
-
   return active ? (
-    <table border="0" cellSpacing="0" cellPadding="0" width="600px" height="85px">
+    <table border="0" cellSpacing="0" cellPadding="0" width="600px" height="85px" style={{color: mainImageFontColor, backgroundColor: mainImageTaglineBG}}>
       <tr>
-        <td width="500px"><p style={{paddingLeft: "16px"}}>Get your free download now!</p></td>
-        <td><button>Order Now</button></td>
+        <td width="500px">
+          {parse(mainImageTagline, {
+            replace: domNode => {
+              if (domNode.name === 'p') {
+                  return React.createElement("div", {style: {paddingLeft: "1rem"}}, domNode.children[0].data)
+                }
+              }
+            })}
+          </td>
+        <td style={{paddingRight: "1rem"}}><button style={buttonStyle}>{mainImageButtonCopy}</button></td>
       </tr>
     </table>
   ) : null

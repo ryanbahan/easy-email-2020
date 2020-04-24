@@ -9,7 +9,7 @@ const EmailHeader = ({
   companyFontColor,
   active }) => {
   return active ? (
-    <table border="0" cellSpacing="0" cellPadding="0" width="600px" height="85px">
+    <table border="0" cellSpacing="0" cellPadding="0" width="600px" height="85px" style={{color: companyFontColor, backgroundColor: bgColor}}>
         <tr>
             <td width="65px"><img src={companyImage} alt="Logo" border="0" style={{display: "block", width: "55px", margin: "0"}} /></td>
             <td style={{fontSize: "16px"}}>{companyName}</td>
