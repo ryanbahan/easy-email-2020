@@ -1,9 +1,6 @@
 .preview {
-  border: solid 0.5px rgba(0,0,0,0.25);
+  border: solid 0.5px rgba(0,0,0,0.15);
   border-radius: 0.15rem;
-  width: 30rem;
-  max-height: 50rem;
-  overflow: scroll;
+  width: 600px;
   min-height: 5rem;
-  max-height: 90vh;
 }

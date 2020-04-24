@@ -60,7 +60,11 @@ export const head = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//
 
 </head>`;
 
-export const bodyTop = `<body style="padding:0; margin:0">`;
+export const bodyTop = `<body style="padding:0; margin:0"><table border="0" cellpadding="0" cellspacing="0" style="margin: 0; padding: 0" width="100%">
+    <tr>
+        <td align="center" valign="top">`;
 
-export const bottom = `</body>
+export const bottom = `</td>
+    </tr>
+</table></body>
 </html>`;

@@ -6,7 +6,7 @@ import Parser from 'html-react-parser';
 const EmailContent = ({ content, active }) => {
 
   return active ? (
-    <section className="email-content" style={{padding: "0 1rem"}}>
+    <section className="email-content" style={{width: "600px"}}>
       {Parser(content)}
     </section>
   ) : null

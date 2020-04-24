@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Parser from 'html-react-parser';
+import parse from 'html-react-parser';
 
 const EmailImageTagline = (
   {
@@ -16,6 +16,7 @@ const EmailImageTagline = (
 
   const buttonStyle = {
     backgroundColor: mainImageButtonColor,
+    display: "inline",
     border: "solid 0.5px rgba(0,0,0,0.25)",
     padding: "0.5rem 1rem",
     fontSize: "0.85rem",
@@ -24,24 +25,26 @@ const EmailImageTagline = (
     height: "min-content",
     fontWeight: "600",
     color: mainImageButtonFontColor,
+    verticalAlign: "middle",
+    float: "right",
   };
 
   const sectionStyle = {
-    margin: "0",
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: " 0.5rem 1rem",
-    fontSize: "1.15rem",
-    fontWeight: "500",
     backgroundColor: mainImageTaglineBG,
     color: mainImageFontColor,
+    width: "600px",
   };
 
   return active ? (
     <section className="email-image-tagline" style={sectionStyle}>
-      {Parser(mainImageTagline)}
-      <button style={buttonStyle}>{Parser(mainImageButtonCopy)}</button>
+      {parse(mainImageTagline, {
+        replace: domNode => {
+          if (domNode.name === 'p') {
+            return React.createElement("p", {style: {display: "inline", border: "solid 1px black", verticalAlign: "top"}}, domNode.children[0].data)
+          }
+        }
+      })}
+      <button style={buttonStyle}>{parse(mainImageButtonCopy)}</button>
     </section>
   ) : null
 }
