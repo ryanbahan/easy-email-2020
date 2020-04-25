@@ -13,13 +13,7 @@ const EmailImage = (
   }) => {
 
   return active ? (
-    <table border="0" cellSpacing="0" cellPadding="0" width="600px">
-      <tbody>
-        <tr>
-          <td><img src={mainImage} alt="Main content" style={{width: "600px"}} /></td>
-        </tr>
-      </tbody>
-    </table>
+    <img src={mainImage} alt="Main content" style={{width: "600px", display: "block"}} />
   ) : null
 }
 

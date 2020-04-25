@@ -8,3 +8,14 @@
   })}
   <button style={buttonStyle}>{parse(mainImageButtonCopy)}</button>
 </section>
+
+
+
+
+{parse(mainImageTagline, {
+  replace: domNode => {
+    if (domNode.name === 'p') {
+        return React.createElement("div", {style: {paddingLeft: "1rem"}}, domNode.children[0].data)
+      }
+    }
+  })}
