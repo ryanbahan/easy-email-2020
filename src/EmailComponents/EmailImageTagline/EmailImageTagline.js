@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import parse from 'html-react-parser';
+import parse, { domToReact } from 'html-react-parser';
 
 const EmailImageTagline = (
   {
@@ -30,19 +30,20 @@ const EmailImageTagline = (
 
   return active ? (
     <table border="0" cellSpacing="0" cellPadding="0" height="85px" width="600px" style={{color: mainImageFontColor, backgroundColor: mainImageTaglineBG}}>
-      <tr>
-        <td width="500px">
-          {parse(mainImageTagline, {
-            replace: domNode => {
-              if (domNode.name) {
-                console.log(domNode);
-                  return React.createElement(domNode.name, {style: {paddingLeft: "1rem"}}, domNode.children[0].data || domNode.children[0].children[0].data)
+      <tbody>
+        <tr>
+          <td width="500px">
+            {parse(mainImageTagline, {
+              replace: domNode => {
+                if (domNode.name) {
+                  return React.createElement(domNode.name, {style: {paddingLeft: "1rem"}}, domToReact(domNode.children, domNode.options))
                 }
               }
             })}
           </td>
-        <td style={{paddingRight: "1rem"}}><button style={buttonStyle}>{mainImageButtonCopy}</button></td>
-      </tr>
+          <td style={{paddingRight: "1rem"}}><button style={buttonStyle}>{mainImageButtonCopy}</button></td>
+        </tr>
+      </tbody>
     </table>
   ) : null
 }
