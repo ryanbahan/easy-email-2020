@@ -7,3 +7,5 @@ deploy:
   provider: pages:git
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
+  on:
+    branch: master
