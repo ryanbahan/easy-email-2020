@@ -9,14 +9,14 @@ import './Preview.css';
 
 const Preview = () => {
   return (
-    <section className="preview">
+    <div className="preview" style={{margin: "25px"}}>
       <EmailHeader />
       <EmailImage />
       <EmailImageTagline />
       <EmailContent />
       <EmailCTA />
       <EmailFooter />
-    </section>
+    </div>
   )
 }
 

@@ -6,7 +6,7 @@ import Parser from 'html-react-parser';
 const EmailFooter = ({ address, fontColor, bgColor, active }) => {
 
   return active ? (
-    <table border="0" cellSpacing="0" cellPadding="0" width="600px">
+    <table border="0" cellSpacing="0" cellPadding="0" width="600px" style={{color: fontColor, backgroundColor: bgColor}}>
       <tbody>
         <tr>
           <td style={{padding: "0 16px"}} align="center">{Parser(address)}</td>

@@ -17,7 +17,7 @@ const EmailContent = ({ cta, buttonColor, buttonFontColor, active }) => {
   }
 
   return active ? (
-    <table border="0" cellSpacing="0" cellPadding="0" width="600px">
+    <table border="0" cellSpacing="0" cellPadding="0" width="600px" style={{backgroundColor: "#ffffff"}}>
       <tbody>
         <tr>
           <td style={{padding: "0 16px"}} align="center"><button style={buttonStyle}>{Parser(cta)}</button></td>
