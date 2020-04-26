@@ -18,7 +18,6 @@ const EmailImageTagline = (
     backgroundColor: mainImageButtonColor,
     border: "solid 0.5px rgba(0,0,0,0.25)",
     padding: "0.5rem 1rem",
-    fontSize: "0.85rem",
     borderRadius: "0.25rem",
     cursor: "pointer",
     height: "min-content",
