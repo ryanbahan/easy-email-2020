@@ -9,7 +9,7 @@ const EmailContent = ({ content, active }) => {
     <table border="0" cellSpacing="0" cellPadding="0" width="600px" style={{backgroundColor: "#ffffff"}}>
       <tbody>
         <tr>
-            <td style={{padding: "0 16px"}}>{Parser(content)}</td>
+            <td style={{padding: "0 16px", fontSize: "20px"}}>{Parser(content)}</td>
         </tr>
       </tbody>
     </table>

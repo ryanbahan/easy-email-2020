@@ -26,6 +26,7 @@ const EmailImageTagline = (
     color: mainImageButtonFontColor,
     verticalAlign: "middle",
     float: "right",
+    fontSize: "20px",
   };
 
   return active ? (
@@ -36,12 +37,12 @@ const EmailImageTagline = (
             {parse(mainImageTagline, {
               replace: domNode => {
                 if (domNode.name) {
-                  return React.createElement(domNode.name, {style: {paddingLeft: "1rem"}}, domToReact(domNode.children, domNode.options))
+                  return React.createElement(domNode.name, {style: {paddingLeft: "1rem", fontSize: "26px"}}, domToReact(domNode.children, domNode.options))
                 }
               }
             })}
           </td>
-          <td style={{paddingRight: "1rem"}}><button style={buttonStyle}>{mainImageButtonCopy}</button></td>
+          <td style={{padding: " 0 1rem"}}><button style={buttonStyle}>{mainImageButtonCopy}</button></td>
         </tr>
       </tbody>
     </table>

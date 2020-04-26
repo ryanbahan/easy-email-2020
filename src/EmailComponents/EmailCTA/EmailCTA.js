@@ -13,7 +13,7 @@ const EmailContent = ({ cta, buttonColor, buttonFontColor, active }) => {
     backgroundColor: buttonColor,
     cursor: "pointer",
     fontWeight: "600",
-    fontSize: "1rem",
+    fontSize: "20px",
   }
 
   return active ? (

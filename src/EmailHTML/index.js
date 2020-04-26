@@ -13,7 +13,7 @@ export const head = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//
 
       /* Some resets and issue fixes */
       #outlook a { padding:0; }
-      body{ width:100% !important; -webkit-text; size-adjust:100%; -ms-text-size-adjust:100%; margin:0; padding:0; }
+      body{ width:100% !important; -webkit-text; size-adjust:100%; -ms-text-size-adjust:100%; margin:0; padding:0;}
       .ReadMsgBody { width: 100%; }
       .ExternalClass {width:100%;}
       .backgroundTable {margin:0 auto; padding:0; width:100%;!important;}
