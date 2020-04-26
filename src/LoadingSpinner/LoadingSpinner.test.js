@@ -22,9 +22,9 @@ describe("LoadingSpinner", () => {
   })
 
   it("should render the correct menu items", () => {
-    const { getByRole } = utils;
+    const { getByTitle } = utils;
 
-    const spinner = getByRole('spinner');
+    const spinner = getByTitle('spinner');
 
     expect(spinner).toBeInTheDocument();
   })
