@@ -4,8 +4,6 @@ node_js:
 notifications:
   email: false
 deploy:
-  provider: pages
+  provider: pages:git
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
-  on:
-    branch: master
