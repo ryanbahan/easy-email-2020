@@ -13,9 +13,7 @@ const EmailImage = (
   }) => {
 
   return active ? (
-    <section style={{display: "flex"}}>
-      <img src={mainImage} alt="Main content" style={{width: "100%", margin: "0", height: "100%"}}/>
-    </section>
+    <img src={mainImage} alt="Main content" style={{width: "600px", display: "block"}} />
   ) : null
 }
 

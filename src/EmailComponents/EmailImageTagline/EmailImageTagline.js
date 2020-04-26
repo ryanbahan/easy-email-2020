@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Parser from 'html-react-parser';
+import parse, { domToReact } from 'html-react-parser';
 
 const EmailImageTagline = (
   {
@@ -24,25 +24,27 @@ const EmailImageTagline = (
     height: "min-content",
     fontWeight: "600",
     color: mainImageButtonFontColor,
-  };
-
-  const sectionStyle = {
-    margin: "0",
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: " 0.5rem 1rem",
-    fontSize: "1.15rem",
-    fontWeight: "500",
-    backgroundColor: mainImageTaglineBG,
-    color: mainImageFontColor,
+    verticalAlign: "middle",
+    float: "right",
   };
 
   return active ? (
-    <section className="email-image-tagline" style={sectionStyle}>
-      {Parser(mainImageTagline)}
-      <button style={buttonStyle}>{Parser(mainImageButtonCopy)}</button>
-    </section>
+    <table border="0" cellSpacing="0" cellPadding="0" height="85px" width="600px" style={{color: mainImageFontColor, backgroundColor: mainImageTaglineBG}}>
+      <tbody>
+        <tr>
+          <td width="500px">
+            {parse(mainImageTagline, {
+              replace: domNode => {
+                if (domNode.name) {
+                  return React.createElement(domNode.name, {style: {paddingLeft: "1rem"}}, domToReact(domNode.children, domNode.options))
+                }
+              }
+            })}
+          </td>
+          <td style={{paddingRight: "1rem"}}><button style={buttonStyle}>{mainImageButtonCopy}</button></td>
+        </tr>
+      </tbody>
+    </table>
   ) : null
 }
 

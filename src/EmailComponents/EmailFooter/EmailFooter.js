@@ -5,20 +5,14 @@ import Parser from 'html-react-parser';
 
 const EmailFooter = ({ address, fontColor, bgColor, active }) => {
 
-  const footerStyle = {
-    display: "flex",
-    justifyContent: "space-around",
-    alignItems: "center",
-    padding: "1rem",
-    color: fontColor,
-    backgroundColor: bgColor,
-    fontWeight: "500",
-  }
-
   return active ? (
-        <footer style={footerStyle}>
-          {Parser(address)}
-        </footer>
+    <table border="0" cellSpacing="0" cellPadding="0" width="600px" style={{color: fontColor, backgroundColor: bgColor}}>
+      <tbody>
+        <tr>
+          <td style={{padding: "0 16px"}} align="center">{Parser(address)}</td>
+        </tr>
+      </tbody>
+    </table>
   ) : null
 }
 

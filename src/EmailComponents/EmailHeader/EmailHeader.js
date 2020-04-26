@@ -8,12 +8,16 @@ const EmailHeader = ({
   companyName,
   companyFontColor,
   active }) => {
-
   return active ? (
-      <header style={{backgroundColor: bgColor, display: "flex", alignItems: "center"}}>
-        <img src={companyImage} alt="Company logo" style={{width: "2.5rem", margin: "1rem"}}/>
-          <p style={{color: companyFontColor, fontWeight: "500", fontSize: "1.125rem"}}>{companyName}</p>
-      </header>
+    <table border="0" cellSpacing="0" cellPadding="0" width="600px" height="85px" style={{color: companyFontColor, backgroundColor: bgColor}}>
+      <tbody>
+        <tr>
+          <td width="65px"><img src={companyImage} alt="Company logo" border="0" style={{display: "block", width: "55px", margin: "0"}} /></td>
+          <td style={{fontSize: "16px"}}>{companyName}</td>
+        </tr>
+      </tbody>
+    </table>
+
   ) : null
 }
 

@@ -17,9 +17,13 @@ const EmailContent = ({ cta, buttonColor, buttonFontColor, active }) => {
   }
 
   return active ? (
-      <div className="email-cta" style={{display: "flex", justifyContent: "center"}}>
-        <button style={buttonStyle}>{Parser(cta)}</button>
-      </div>
+    <table border="0" cellSpacing="0" cellPadding="0" width="600px" style={{backgroundColor: "#ffffff"}}>
+      <tbody>
+        <tr>
+          <td style={{padding: "0 16px"}} align="center"><button style={buttonStyle}>{Parser(cta)}</button></td>
+        </tr>
+      </tbody>
+    </table>
   ) : null
 }
 

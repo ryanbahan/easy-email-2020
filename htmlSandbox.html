@@ -1,0 +1,21 @@
+<section className="email-image-tagline" style={sectionStyle}>
+  {parse(mainImageTagline, {
+    replace: domNode => {
+      if (domNode.name === 'p') {
+        return React.createElement("p", {style: {display: "inline", border: "solid 1px black", verticalAlign: "top"}}, domNode.children[0].data)
+      }
+    }
+  })}
+  <button style={buttonStyle}>{parse(mainImageButtonCopy)}</button>
+</section>
+
+
+
+
+{parse(mainImageTagline, {
+  replace: domNode => {
+    if (domNode.name === 'p') {
+        return React.createElement("div", {style: {paddingLeft: "1rem"}}, domNode.children[0].data)
+      }
+    }
+  })}
