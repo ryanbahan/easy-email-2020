@@ -3,7 +3,12 @@ node_js:
 - node
 notifications:
   email: false
+script:
+- npm run build
 deploy:
   provider: pages
   skip_cleanup: true
+  local_dir: build
   github_token: $GITHUB_TOKEN
+  on:
+    branch: master
