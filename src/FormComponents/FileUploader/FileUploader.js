@@ -10,7 +10,7 @@ class FileUploader extends React.Component {
     const file = event.target.files[0];
 
     if (file) {
-      this.props.isLoading(true);
+      this.props.isLoading(this.props.store);
       const formData = new FormData()
       formData.append('myFile', file);
 
@@ -22,6 +22,7 @@ class FileUploader extends React.Component {
         .then(data =>
           {this.props.update({[this.props.store]: `https://limitless-citadel-48645.herokuapp.com${data.path}`});
             this.props.isLoading(false);
+            console.log(this.props.store);
             }
           )
     }
