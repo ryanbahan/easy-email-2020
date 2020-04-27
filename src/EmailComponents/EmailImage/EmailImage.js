@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ImageLoadingSpinner from '../../ImageLoadingSpinner/ImageLoadingSpinner';
 import { connect } from 'react-redux';
 
 const EmailImage = (
@@ -10,10 +11,14 @@ const EmailImage = (
     mainImageButtonColor,
     mainImageButtonFontColor,
     active,
+    loading,
   }) => {
 
   return active ? (
-    <img src={mainImage} alt="Main content" style={{width: "600px", display: "block"}} />
+    <div className="placeholder-image-container" style={{position: "relative"}}>
+      {loading && <ImageLoadingSpinner />}
+      <img src={mainImage} alt="Main content" style={{width: "600px", display: "block"}} />
+    </div>
   ) : null
 }
 
@@ -24,6 +29,7 @@ const mapStateToProps = state => ({
   mainImageButtonColor: state.form.mainImageButtonColor,
   mainImageButtonFontColor: state.form.mainImageButtonFontColor,
   active: state.visibility["Main Image"],
+  loading: state.loading,
 });
 
 EmailImage.propTypes = {
