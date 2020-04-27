@@ -11,9 +11,9 @@ describe("formReducer", () => {
 
   it("should return the updated state of the form content", () => {
     const expected = {
-      companyImage: '/placeholder-image.png',
+      companyImage: 'https://limitless-citadel-48645.herokuapp.com/images/placeholder-image.png',
       companyName: 'Figma',
-      mainImage: '/placeholder-image.png',
+      mainImage: 'https://limitless-citadel-48645.herokuapp.com/images/placeholder-image.png',
       mainImageTagline: 'Download our new e-book for free!',
       mainImageButtonCopy: 'Free Download',
       mainImageTaglineBG: "#ffffff",

@@ -17,7 +17,7 @@ const EmailHeader = ({
         <tr>
           <td width="85px">
             <div className="company-logo-container" style={{position: "relative", width: "min-content"}}>
-              {loading === companyImage && <ImageLoadingSpinner />}
+              {loading === 'companyImage' && <ImageLoadingSpinner />}
               <img src={companyImage} alt="Company logo" border="0" style={{display: "block", width: "75px", margin: "0"}} />
             </div>
           </td>

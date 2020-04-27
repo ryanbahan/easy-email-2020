@@ -21,6 +21,6 @@ describe("EmailImage", () => {
     const image = getByAltText('Main content');
 
     expect(image).toBeInTheDocument();
-    expect(image.src).toBe("http://localhost/placeholder-image.png");
+    expect(image.src).toBe(DefaultState.mainImage);
   })
 });

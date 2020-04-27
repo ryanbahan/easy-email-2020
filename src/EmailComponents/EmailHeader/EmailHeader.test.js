@@ -23,6 +23,6 @@ describe("EmailHeader", () => {
 
     expect(companyName).toBeInTheDocument();
     expect(companyLogo).toBeInTheDocument();
-    expect(companyLogo.src).toBe("http://localhost/placeholder-image.png");
+    expect(companyLogo.src).toBe(DefaultState.companyImage);
   })
 });

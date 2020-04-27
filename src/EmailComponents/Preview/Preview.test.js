@@ -34,10 +34,10 @@ describe("Preview", () => {
     const footer = getByText(DefaultState.footerAddress);
 
     expect(companyLogo).toBeInTheDocument();
-    expect(companyLogo.src).toEqual("http://localhost/placeholder-image.png");
+    expect(companyLogo.src).toEqual(DefaultState.companyImage);
     expect(companyName).toBeInTheDocument();
     expect(image).toBeInTheDocument();
-    expect(image.src).toEqual("http://localhost/placeholder-image.png");
+    expect(image.src).toEqual(DefaultState.mainImage);
     expect(mainImageTagline).toBeInTheDocument();
     expect(mainImageButtonCopy).toBeInTheDocument();
     expect(content).toBeInTheDocument();

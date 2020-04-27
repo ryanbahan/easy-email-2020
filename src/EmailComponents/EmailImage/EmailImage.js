@@ -16,7 +16,7 @@ const EmailImage = (
 
   return active ? (
     <div className="placeholder-image-container" style={{position: "relative"}}>
-      {loading === mainImage && <ImageLoadingSpinner />}
+      {loading === 'mainImage' && <ImageLoadingSpinner />}
       <img src={mainImage} alt="Main content" style={{width: "600px", display: "block"}} />
     </div>
   ) : null
