@@ -5,6 +5,7 @@
 .form-title-wrapper {
   display: flex;
   align-items: center;
+  padding-left: 1.15rem;
 }
 
 .form-item {

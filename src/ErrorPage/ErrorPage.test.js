@@ -4,7 +4,7 @@ import '@testing-library/jest-dom/extend-expect';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import ErrorPage from './ErrorPage';
-import rootReducer from '../reducers';
+import rootReducer from '../utils/reducers';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 
 describe("ErrorPage", () => {

@@ -11,9 +11,9 @@ describe("formReducer", () => {
 
   it("should return the updated state of the form content", () => {
     const expected = {
-      companyImage: 'https://via.placeholder.com/150',
+      companyImage: '/placeholder-image.png',
       companyName: 'Figma',
-      mainImage: 'https://via.placeholder.com/1200x600',
+      mainImage: '/placeholder-image.png',
       mainImageTagline: 'Download our new e-book for free!',
       mainImageButtonCopy: 'Free Download',
       mainImageTaglineBG: "#ffffff",

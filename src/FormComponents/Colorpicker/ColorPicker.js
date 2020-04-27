@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { update } from '../../actions';
+import { update } from '../../utils/actions';
 import PropTypes from 'prop-types';
 import CustomPicker from './CustomPicker';
 

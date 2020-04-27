@@ -10,9 +10,9 @@ import Preview from '../Preview/Preview';
 import { render } from '@testing-library/react';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import rootReducer from '../../reducers';
+import rootReducer from '../../utils/reducers';
 import '@testing-library/jest-dom/extend-expect';
-import { DefaultState } from '../../Templates/DefaultState';
+import { DefaultState } from '../../utils/Templates/DefaultState';
 
 describe("PreviewContainer", () => {
   const store = createStore(rootReducer);
@@ -35,10 +35,10 @@ describe("PreviewContainer", () => {
     const footer = getByText(DefaultState.footerAddress);
 
     expect(companyLogo).toBeInTheDocument();
-    expect(companyLogo.src).toEqual(DefaultState.companyImage);
+    expect(companyLogo.src).toEqual("http://localhost/placeholder-image.png");
     expect(companyName).toBeInTheDocument();
     expect(image).toBeInTheDocument();
-    expect(image.src).toEqual(DefaultState.mainImage);
+    expect(image.src).toEqual("http://localhost/placeholder-image.png");
     expect(mainImageTagline).toBeInTheDocument();
     expect(mainImageButtonCopy).toBeInTheDocument();
     expect(content).toBeInTheDocument();

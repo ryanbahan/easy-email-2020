@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { Builder } from '../FormComponents/Builder/Builder';
 import PreviewContainer from '../EmailComponents/PreviewContainer/PreviewContainer';
-import { DefaultTemplate } from '../Templates/DefaultTemplate';
+import { DefaultTemplate } from '../utils/Templates/DefaultTemplate';
 import ErrorPage from '../ErrorPage/ErrorPage';
 import { Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';

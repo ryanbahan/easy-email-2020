@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { clearError } from '../actions';
+import { clearError } from '../utils/actions';
 import './ErrorPage.css';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';

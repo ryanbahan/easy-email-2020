@@ -1,6 +1,6 @@
 import React from 'react';
 import './FileUploader.css';
-import { update } from '../../actions';
+import { update } from '../../utils/actions';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 

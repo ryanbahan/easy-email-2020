@@ -3,7 +3,7 @@ import LoadingSpinner from './LoadingSpinner';
 import { render } from '@testing-library/react';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import rootReducer from '../reducers';
+import rootReducer from '../utils/reducers';
 import '@testing-library/jest-dom/extend-expect';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 

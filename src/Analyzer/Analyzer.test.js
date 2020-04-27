@@ -4,9 +4,9 @@ import React from 'react';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import Analyzer from './Analyzer';
-import rootReducer from '../reducers';
+import rootReducer from '../utils/reducers';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
-import { DefaultState } from '../Templates/DefaultState';
+import { DefaultState } from '../utils/Templates/DefaultState';
 
 describe("Analyzer", () => {
   const store = createStore(rootReducer);

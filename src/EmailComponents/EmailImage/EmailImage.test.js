@@ -3,9 +3,9 @@ import EmailImage from './EmailImage';
 import { render } from '@testing-library/react';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import rootReducer from '../../reducers';
+import rootReducer from '../../utils/reducers';
 import '@testing-library/jest-dom/extend-expect';
-import { DefaultState } from '../../Templates/DefaultState';
+import { DefaultState } from '../../utils/Templates/DefaultState';
 
 describe("EmailImage", () => {
   const store = createStore(rootReducer);
@@ -21,6 +21,6 @@ describe("EmailImage", () => {
     const image = getByAltText('Main content');
 
     expect(image).toBeInTheDocument();
-    expect(image.src).toEqual(DefaultState.mainImage);
+    expect(image.src).toBe("http://localhost/placeholder-image.png");
   })
 });

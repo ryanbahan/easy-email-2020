@@ -2,7 +2,7 @@ import React from 'react';
 import './DropdownContainer.css';
 import Dropdown from '../Dropdown/Dropdown';
 import { connect } from 'react-redux';
-import { toggleVisibility } from '../../actions';
+import { toggleVisibility } from '../../utils/actions';
 import PropTypes from 'prop-types';
 
 class DropdownContainer extends React.Component {

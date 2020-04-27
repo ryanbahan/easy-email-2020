@@ -3,9 +3,9 @@ import DropdownContainer from './DropdownContainer';
 import { render } from '@testing-library/react';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import rootReducer from '../../reducers';
+import rootReducer from '../../utils/reducers';
 import '@testing-library/jest-dom/extend-expect';
-import { DefaultTemplate } from '../../Templates/DefaultTemplate';
+import { DefaultTemplate } from '../../utils/Templates/DefaultTemplate';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 
 describe("DropdownContainer", () => {
