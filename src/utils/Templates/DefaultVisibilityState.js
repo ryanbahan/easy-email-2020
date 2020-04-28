@@ -1,7 +1,7 @@
 export const DefaultVisibilityState = {
   "Header": true,
   "Main Image": true,
-  "Image Tagline": true,
+  "Image Banner": true,
   "Main Content": true,
   "Footer": true,
 }

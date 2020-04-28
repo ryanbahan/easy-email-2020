@@ -55,7 +55,7 @@ const mapStateToProps = state => ({
   mainImageButtonColor: state.form.mainImageButtonColor,
   mainImageFontColor: state.form.mainImageFontColor,
   mainImageButtonFontColor: state.form.mainImageButtonFontColor,
-  active: state.visibility["Image Tagline"],
+  active: state.visibility["Image Banner"],
 });
 
 EmailImageTagline.propTypes = {

@@ -13,7 +13,7 @@ describe("visibilityReducer", () => {
     const expected = {
       "Header": false,
       "Main Image": true,
-      "Image Tagline": true,
+      "Image Banner": true,
       "Main Content": true,
       "Footer": true,
     }

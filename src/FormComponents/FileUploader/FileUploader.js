@@ -20,11 +20,11 @@ class FileUploader extends React.Component {
         })
         .then(res => res.json())
         .then(data =>
-          {this.props.update({[this.props.store]: `https://limitless-citadel-48645.herokuapp.com${data.path}`});
+          {
+            this.props.update({[this.props.store]: `https://limitless-citadel-48645.herokuapp.com${data.path}`});
             this.props.isLoading(false);
-            console.log(this.props.store);
-            }
-          )
+          }
+        )
     }
   }
 
