@@ -4,5 +4,7 @@ export const DefaultVisibilityState = {
   "Image Banner": true,
   "Main Content": true,
   "Footer": true,
-  "Image": true
+  "Image": true,
+  "Company Logo": true,
+  "Company Name": true,
 }
