@@ -26,7 +26,7 @@ class Dropdown extends React.Component {
   }
 
   toggleChecked = (item) => {
-    this.props.toggleVisibility({[item]: !this.props.active})
+    this.props.toggleVisibility({[item]: !this.props.active[item]})
   }
 
   getFormItems = () => {
@@ -56,7 +56,7 @@ const mapDispatchToProps = (dispatch) => ({
 })
 
 const mapStateToProps = (state, ownProps) => ({
-  active: true
+  active: state.visibility,
 })
 
 Dropdown.propTypes = {
