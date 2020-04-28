@@ -14,9 +14,9 @@ export const DefaultTemplate = [{
   ],
 },
 {
-  title: "Image Tagline",
+  title: "Image Banner",
   formItems: [
-    {title: "Tagline Text", component: "TextField", store: "mainImageTagline"},
+    {title: "Banner Text", component: "TextField", store: "mainImageTagline"},
     {title: "Background Color", component: "Colorpicker", store: "mainImageTaglineBG"},
     {title: "Font Color", component: "Colorpicker", store: "mainImageFontColor"},
     {title: null},

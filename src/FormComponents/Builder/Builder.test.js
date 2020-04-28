@@ -36,7 +36,7 @@ describe("Builder", () => {
 
     const headerMenu = getByText("Header");
     const imageMenu = getByText("Main Image");
-    const taglineMenu = getByText("Image Tagline");
+    const taglineMenu = getByText("Image Banner");
     const contentMenu = getByText("Main Content");
     const footerMenu = getByText("Footer");
 
