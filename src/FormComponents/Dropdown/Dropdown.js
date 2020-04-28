@@ -5,8 +5,10 @@ import FileUploader from '../FileUploader/FileUploader';
 import TextField from '../TextField/TextField';
 import ButtonCopyField from '../ButtonCopyField/ButtonCopyField';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { toggleVisibility } from '../../utils/actions';
 
-export default class Dropdown extends React.Component {
+class Dropdown extends React.Component {
 
   getFormComponent = (item) => {
     switch (item.component) {
@@ -23,10 +25,15 @@ export default class Dropdown extends React.Component {
     }
   }
 
+  toggleChecked = (item) => {
+    this.props.toggleVisibility({[item]: !this.props.active})
+  }
+
   getFormItems = () => {
     return this.props.formItems.map(item =>
       ( <div className="form-item" key={item.title}>
           <div className="form-title-wrapper">
+            {item.title && <input type="checkbox" onClick={() => this.toggleChecked(item.title)} defaultChecked={this.props.active} />}
             <p style={{fontSize: "0.85rem", marginLeft: "0.25rem"}}>{item.title}</p>
           </div>
           {this.getFormComponent(item)}
@@ -44,7 +51,17 @@ export default class Dropdown extends React.Component {
   }
 }
 
+const mapDispatchToProps = (dispatch) => ({
+  toggleVisibility: (title, bool) => dispatch(toggleVisibility(title, bool))
+})
+
+const mapStateToProps = (state, ownProps) => ({
+  active: true
+})
+
 Dropdown.propTypes = {
   dropdown: PropTypes.bool,
   formItems: PropTypes.array,
 }
+
+export default connect(mapStateToProps, mapDispatchToProps)(Dropdown);
