@@ -9,19 +9,21 @@ const EmailHeader = ({
   companyName,
   companyFontColor,
   active,
-  loading
+  loading,
+  logoActive,
+  nameActive
   }) => {
   return active ? (
     <table border="0" cellSpacing="0" cellPadding="0" width="600px" height="105px" style={{color: companyFontColor, backgroundColor: bgColor}}>
       <tbody>
         <tr>
-          <td width="85px">
+          {logoActive && <td width="85px">
             <div className="company-logo-container" style={{position: "relative", width: "min-content"}}>
               {loading === 'companyImage' && <ImageLoadingSpinner />}
               <img src={companyImage} alt="Company logo" border="0" style={{display: "block", width: "75px", margin: "0"}} />
             </div>
-          </td>
-          <td style={{fontSize: "25px"}}>{companyName}</td>
+          </td>}
+          { nameActive && <td style={{fontSize: "25px"}}>{companyName}</td>}
         </tr>
       </tbody>
     </table>
@@ -36,6 +38,8 @@ const mapStateToProps = state => ({
   bgColor: state.form.headerBGColor,
   active: state.visibility["Header"],
   loading: state.loading,
+  logoActive: state.visibility["Company Logo"],
+  nameActive: state.visibility["Company Name"],
 })
 
 EmailHeader.propTypes = {
