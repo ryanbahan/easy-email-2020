@@ -9,6 +9,7 @@ import EmailContent from '../EmailComponents/EmailContent/EmailContent';
 import EmailCTA from '../EmailComponents/EmailCTA/EmailCTA';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 class Analyzer extends React.Component {
   constructor() {
@@ -45,6 +46,7 @@ class Analyzer extends React.Component {
   render() {
     return (
       <div className="tone-analysis-view">
+      <Link to="/"><button className="back">{'< Back'}</button></Link>
       {this.props.loading && <LoadingSpinner />}
         <h2>Content Sentiment</h2>
         <div className="email-content-wrapper">
