@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Parser from 'html-react-parser';
 
-const EmailContent = ({ cta, buttonColor, buttonFontColor, active }) => {
+const EmailContent = ({ cta, buttonColor, buttonFontColor, active, buttonActive }) => {
   const buttonStyle = {
     margin: "1rem 0",
     padding: "0.75rem 1.25rem",
@@ -20,7 +20,7 @@ const EmailContent = ({ cta, buttonColor, buttonFontColor, active }) => {
     <table border="0" cellSpacing="0" cellPadding="0" width="600px" style={{backgroundColor: "#ffffff"}}>
       <tbody>
         <tr>
-          <td style={{padding: "0 16px"}} align="center"><button style={buttonStyle}>{Parser(cta)}</button></td>
+          {buttonActive && <td style={{padding: "0 16px"}} align="center"><button style={buttonStyle}>{Parser(cta)}</button></td>}
         </tr>
       </tbody>
     </table>
@@ -32,6 +32,7 @@ const mapStateToProps = state => ({
   buttonColor: state.form.ctaButtonColor,
   buttonFontColor: state.form.ctaButtonFontColor,
   active: state.visibility["Main Content"],
+  buttonActive: state.visibility["Button Text"],
 })
 
 EmailContent.propTypes = {

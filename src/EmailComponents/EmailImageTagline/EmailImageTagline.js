@@ -11,7 +11,9 @@ const EmailImageTagline = (
     mainImageButtonColor,
     mainImageFontColor,
     mainImageButtonFontColor,
-    active
+    active,
+    bannerTextActive,
+    buttonTextActive,
   }) => {
 
   const buttonStyle = {
@@ -32,7 +34,7 @@ const EmailImageTagline = (
     <table border="0" cellSpacing="0" cellPadding="0" height="85px" width="600px" style={{color: mainImageFontColor, backgroundColor: mainImageTaglineBG}}>
       <tbody>
         <tr>
-          <td width="500px">
+          {bannerTextActive && <td width="500px">
             {parse(mainImageTagline, {
               replace: domNode => {
                 if (domNode.name) {
@@ -40,8 +42,8 @@ const EmailImageTagline = (
                 }
               }
             })}
-          </td>
-          <td style={{padding: " 0 1rem"}}><button style={buttonStyle}>{mainImageButtonCopy}</button></td>
+          </td>}
+          {buttonTextActive && <td style={{padding: " 0 1rem"}}><button style={buttonStyle}>{mainImageButtonCopy}</button></td>}
         </tr>
       </tbody>
     </table>
@@ -56,6 +58,8 @@ const mapStateToProps = state => ({
   mainImageFontColor: state.form.mainImageFontColor,
   mainImageButtonFontColor: state.form.mainImageButtonFontColor,
   active: state.visibility["Image Banner"],
+  bannerTextActive: state.visibility["Banner Text"],
+  buttonTextActive: state.visibility["Button Text"],
 });
 
 EmailImageTagline.propTypes = {
