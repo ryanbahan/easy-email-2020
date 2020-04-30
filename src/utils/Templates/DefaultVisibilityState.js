@@ -8,5 +8,7 @@ export const DefaultVisibilityState = {
   "Company Logo": true,
   "Company Name": true,
   "Banner Text": true,
-  "Button Text": true,
+  "Banner Button Text": true,
+  "CTA Button Text": true,
+  "Content Block Text": true,
 }

@@ -12,7 +12,8 @@ describe("visibilityReducer", () => {
   it("should return the updated visibility state on TOGGLE_VISIBILITY", () => {
     const expected =  {
       "Banner Text": true,
-      "Button Text": true,
+      "Banner Button Text": true,
+      "CTA Button Text": true,
       "Company Logo": true,
       "Company Name": true,
       "Footer": true,
@@ -21,6 +22,7 @@ describe("visibilityReducer", () => {
       "Image Banner": true,
       "Main Content": true,
       "Main Image": true,
+      "Content Block Text": true,
       }
     const result = visibilityReducer(DefaultVisibilityState, {
       type: "TOGGLE_VISIBILITY", payload: {"Header": false}

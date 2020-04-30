@@ -32,7 +32,7 @@ const mapStateToProps = state => ({
   buttonColor: state.form.ctaButtonColor,
   buttonFontColor: state.form.ctaButtonFontColor,
   active: state.visibility["Main Content"],
-  buttonActive: state.visibility["Button Text"],
+  buttonActive: state.visibility["CTA Button Text"],
 })
 
 EmailContent.propTypes = {

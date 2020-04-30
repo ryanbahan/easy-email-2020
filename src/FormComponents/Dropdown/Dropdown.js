@@ -33,8 +33,9 @@ class Dropdown extends React.Component {
     return this.props.formItems.map(item =>
       ( <div className="form-item" key={item.title}>
           <div className="form-title-wrapper">
-            {item.title && <input type="checkbox" onClick={() => this.toggleChecked(item.title)} defaultChecked={this.props.active} />}
-            <p style={{fontSize: "0.85rem", marginLeft: "0.25rem"}}>{item.title}</p>
+            {item.checkbox && <input type="checkbox" onClick={() => this.toggleChecked(item.title)} defaultChecked={this.props.active} style={{cursor: "pointer"}}/>}
+            {item.checkbox && <p style={{fontSize: "0.85rem", marginLeft: "0.25rem"}}>{item.title}</p>}
+            {!item.checkbox && <p style={{fontSize: "0.85rem", marginLeft: "1.4rem"}}>{item.title}</p>}
           </div>
           {this.getFormComponent(item)}
         </div>
