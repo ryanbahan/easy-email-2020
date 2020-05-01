@@ -24,7 +24,7 @@ class ErrorPage extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  warning: state.warning,
+  warning: state.warning.warning,
 })
 
 const mapDispatchToProps = dispatch => ({
