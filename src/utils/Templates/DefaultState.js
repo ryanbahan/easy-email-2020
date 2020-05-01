@@ -10,4 +10,7 @@ export const DefaultState = {
   headerBGColor: "#ffffff",
   footerBGColor: "#ffffff",
   mainImageTaglineBG: "#ffffff",
+  mainImageButtonLink: "",
+  ctaButtonLink: "",
+  headerLink: "",
 }

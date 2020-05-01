@@ -15,6 +15,13 @@ export const DefaultTemplate = [{
       checkbox: true
     },
     {
+      title: "Header Link",
+      component: "ButtonCopyField",
+      constraints: {maxLength: Infinity},
+      store: "headerLink",
+      checkbox: false
+    },
+    {
       title: "Font Color",
       component: "Colorpicker",
       store: "companyFontColor",
@@ -72,6 +79,13 @@ export const DefaultTemplate = [{
       checkbox: true
     },
     {
+      title: "Banner Button Link",
+      component: "ButtonCopyField",
+      constraints: {maxLength: Infinity},
+      store: "mainImageButtonLink",
+      checkbox: false
+    },
+    {
       title: "Button Color",
       component: "Colorpicker",
       store: "mainImageButtonColor",
@@ -103,6 +117,13 @@ export const DefaultTemplate = [{
       checkbox: true
     },
     {
+      title: "CTA Button Link",
+      component: "ButtonCopyField",
+      store: "ctaButtonLink",
+      constraints: {maxLength: Infinity},
+      checkbox: false
+    },
+    {
       title: "Button Color",
       component: "Colorpicker",
       store: "ctaButtonColor",
@@ -113,7 +134,7 @@ export const DefaultTemplate = [{
       component: "Colorpicker",
       store: "ctaButtonFontColor",
       checkbox: false
-    }
+    },
   ],
 },
 {

@@ -14,6 +14,7 @@ const EmailImageTagline = (
     active,
     bannerTextActive,
     buttonTextActive,
+    link,
   }) => {
 
   const buttonStyle = {
@@ -43,7 +44,7 @@ const EmailImageTagline = (
               }
             })}
           </td>}
-          {buttonTextActive && <td style={{padding: " 1rem"}}><button style={buttonStyle}>{mainImageButtonCopy}</button></td>}
+          {buttonTextActive && <td style={{padding: " 1rem"}}><a href={link}><button style={buttonStyle}>{mainImageButtonCopy}</button></a></td>}
         </tr>
       </tbody>
     </table>
@@ -60,6 +61,7 @@ const mapStateToProps = state => ({
   active: state.visibility["Image Banner"],
   bannerTextActive: state.visibility["Banner Text"],
   buttonTextActive: state.visibility["Banner Button Text"],
+  link: state.form["mainImageButtonLink"]
 });
 
 EmailImageTagline.propTypes = {
