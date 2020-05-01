@@ -13,13 +13,13 @@ class Dropdown extends React.Component {
   getFormComponent = (item) => {
     switch (item.component) {
       case "ButtonCopyField":
-        return <ButtonCopyField store={item.store} />
+        return <ButtonCopyField store={item.store} constraints={item.constraints} />
       case "Colorpicker":
-        return <Colorpicker store={item.store} />
+        return <Colorpicker store={item.store} constraints={item.constraints} />
       case "TextField":
-        return <TextField store={item.store} />
+        return <TextField store={item.store} constraints={item.constraints} />
       case "FileUploader":
-        return <FileUploader store={item.store} />
+        return <FileUploader store={item.store} constraints={item.constraints} />
       default:
         return null;
     }

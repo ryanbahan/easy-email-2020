@@ -19,6 +19,9 @@ class TextField extends React.Component {
   }
 
   update = (store, content) => {
+    if (content.length > this.props.constraints.maxLength) {
+      console.log('warning here');
+    }
     this.props.update({[store]: content});
   }
 

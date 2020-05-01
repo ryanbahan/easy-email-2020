@@ -18,7 +18,6 @@ class DropdownContainer extends React.Component {
   }
 
   toggleDropdown = (e) => {
-    console.log('test');
     this.setState({dropdown: !this.state.dropdown});
   }
 
