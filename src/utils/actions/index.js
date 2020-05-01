@@ -22,3 +22,13 @@ export const clearError = () => ({
   type: "CLEAR_ERROR",
   payload: false,
 })
+
+export const hasWarning = warning => ({
+  type: "HAS_WARNING",
+  payload: warning,
+})
+
+export const clearWarning = () => ({
+  type: "CLEAR_WARNING",
+  payload: false,
+})
