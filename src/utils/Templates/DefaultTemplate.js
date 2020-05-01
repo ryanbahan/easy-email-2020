@@ -10,6 +10,7 @@ export const DefaultTemplate = [{
     {
       title: "Company Name",
       component: "ButtonCopyField",
+      constraints: {maxLength: 40},
       store: "companyName",
       checkbox: true
     },
