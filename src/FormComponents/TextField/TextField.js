@@ -4,6 +4,7 @@ import { update, hasWarning, clearWarning } from '../../utils/actions';
 import './TextField.css';
 import PropTypes from 'prop-types';
 import ReactQuill from 'react-quill';
+import WarningModal from '../../WarningModal/WarningModal';
 import 'react-quill/dist/quill.snow.css';
 
 class TextField extends React.Component {
@@ -20,7 +21,7 @@ class TextField extends React.Component {
 
   update = (store, content) => {
     if (content.length > this.props.constraints.maxLength) {
-      this.props.warning("test");
+      this.props.hasWarning("Warning: Your content exceeds the Maximum suggested length for this section.");
     } else {
       this.props.clearWarning();
     }
@@ -31,12 +32,13 @@ class TextField extends React.Component {
   render() {
     return (
         <>
-          <button className="text-field-btn" onClick={() => this.toggleModal()}>
+          <button className="text-field-btn" onClick={() => this.toggleModal()} >
             Edit
           </button>
           <div className={this.state.active ? "modal-wrapper" : "hidden"}>
-            <div className="modal">
+            <div className="modal" style={{position: "relative"}}>
               <ReactQuill theme="snow" value={this.props.content} onChange={(value) => this.update(this.props.store, value)}/>
+              {this.props.warning && <WarningModal />}
             </div>
           </div>
         </>
@@ -46,11 +48,12 @@ class TextField extends React.Component {
 
 const mapStateToProps = (state, ownProps) => ({
   content: state.form[ownProps.store],
+  warning: state.warning,
 })
 
 const mapDispatchToProps = dispatch => ({
   update: content => dispatch(update(content)),
-  warning: warning => dispatch(hasWarning(warning)),
+  hasWarning: warning => dispatch(hasWarning(warning)),
   clearWarning: () => dispatch(clearWarning()),
 })
 

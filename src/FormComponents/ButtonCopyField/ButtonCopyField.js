@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { update } from '../../utils/actions';
+import { update, hasWarning, clearWarning } from '../../utils/actions';
 import './ButtonCopyField.css';
 import PropTypes from 'prop-types';
+import WarningModal from '../../WarningModal/WarningModal';
 
 class ButtonCopyField extends React.Component {
   constructor() {
@@ -17,6 +18,12 @@ class ButtonCopyField extends React.Component {
   }
 
   update = (store, content) => {
+    if (content.length > this.props.constraints.maxLength) {
+      this.props.hasWarning("Warning: Your content exceeds the maximum suggested length for this section.");
+    } else {
+      this.props.clearWarning();
+    }
+
     this.props.update({[store]: content});
   }
 
@@ -33,6 +40,7 @@ class ButtonCopyField extends React.Component {
                 value={this.props.content}
                 onChange={(e) => this.update(this.props.store, e.target.value)}
               />
+              {this.props.warning && <WarningModal />}
             </div>
           </div>
         </>
@@ -42,10 +50,13 @@ class ButtonCopyField extends React.Component {
 
 const mapStateToProps = (state, ownProps) => ({
   content: state.form[ownProps.store],
+  warning: state.warning,
 })
 
 const mapDispatchToProps = dispatch => ({
-  update: content => dispatch(update(content))
+  update: content => dispatch(update(content)),
+  hasWarning: warning => dispatch(hasWarning(warning)),
+  clearWarning: () => dispatch(clearWarning()),
 })
 
 ButtonCopyField.propTypes = {

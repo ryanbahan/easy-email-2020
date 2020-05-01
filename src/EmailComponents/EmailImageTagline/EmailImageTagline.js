@@ -31,10 +31,10 @@ const EmailImageTagline = (
   };
 
   return active ? (
-    <table border="0" cellSpacing="0" cellPadding="0" height="85px" width="600px" style={{color: mainImageFontColor, backgroundColor: mainImageTaglineBG}}>
+    <table border="0" cellSpacing="0" cellPadding="0" style={{display: "block", color: mainImageFontColor, backgroundColor: mainImageTaglineBG, tableLayout: "fixed", width: "100%", paddingTop: "1rem"}}>
       <tbody>
         <tr>
-          {bannerTextActive && <td width="500px">
+          {bannerTextActive && <td>
             {parse(mainImageTagline, {
               replace: domNode => {
                 if (domNode.name) {
@@ -43,7 +43,7 @@ const EmailImageTagline = (
               }
             })}
           </td>}
-          {buttonTextActive && <td style={{padding: " 0 1rem"}}><button style={buttonStyle}>{mainImageButtonCopy}</button></td>}
+          {buttonTextActive && <td style={{padding: " 1rem"}}><button style={buttonStyle}>{mainImageButtonCopy}</button></td>}
         </tr>
       </tbody>
     </table>

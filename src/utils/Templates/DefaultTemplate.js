@@ -66,7 +66,7 @@ export const DefaultTemplate = [{
     {
       title: "Banner Button Text",
       component: "ButtonCopyField",
-      constraints: {maxLength: 40},
+      constraints: {maxLength: 25},
       store: "mainImageButtonCopy",
       checkbox: true
     },
@@ -97,6 +97,7 @@ export const DefaultTemplate = [{
     {
       title: "CTA Button Text",
       component: "ButtonCopyField",
+      constraints: {maxLength: 50},
       store: "cta",
       checkbox: true
     },

@@ -16,13 +16,9 @@ class ErrorPage extends React.Component {
 
   render() {
       return (
-        <section className="warning-wrapper">
-          <div className="cover" onClick={this.closeModal} />
           <div className="warning-block">
             <p>{this.props.warning}</p>
-            <button type="button" onClick={this.closeModal}>Close</button>
           </div>
-        </section>
     )
   }
 }
