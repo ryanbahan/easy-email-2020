@@ -28,7 +28,7 @@ describe("Dropdown", () => {
           <Dropdown
             formItems={[
               {title: "Company Logo", component: "FileUploader", store: "companyImage"},
-              {title: "Company Name", component: "TextField", store: "companyName"},
+              {title: "Company Name", component: "TextField", constraints: {maxLength: 10}, store: "companyName"},
               {title: "Font Color", component: "Colorpicker", store: "companyFontColor"},
               {title: "Background Color", component: "Colorpicker", store: "headerBGColor"},
             ]}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { update, hasWarning } from '../../utils/actions';
+import { update, hasWarning, clearWarning } from '../../utils/actions';
 import './TextField.css';
 import PropTypes from 'prop-types';
 import ReactQuill from 'react-quill';
@@ -21,7 +21,10 @@ class TextField extends React.Component {
   update = (store, content) => {
     if (content.length > this.props.constraints.maxLength) {
       this.props.warning("test");
+    } else {
+      this.props.clearWarning();
     }
+
     this.props.update({[store]: content});
   }
 
@@ -47,7 +50,8 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = dispatch => ({
   update: content => dispatch(update(content)),
-  warning: warning => dispatch(hasWarning(warning))
+  warning: warning => dispatch(hasWarning(warning)),
+  clearWarning: () => dispatch(clearWarning()),
 })
 
 TextField.propTypes = {

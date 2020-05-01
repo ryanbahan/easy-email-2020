@@ -4,6 +4,7 @@ import { Builder } from '../FormComponents/Builder/Builder';
 import PreviewContainer from '../EmailComponents/PreviewContainer/PreviewContainer';
 import { DefaultTemplate } from '../utils/Templates/DefaultTemplate';
 import ErrorPage from '../ErrorPage/ErrorPage';
+import WarningModal from '../WarningModal/WarningModal';
 import { Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Analyzer from '../Analyzer/Analyzer';
@@ -13,6 +14,7 @@ const App = (props) => {
   return (
       <div className="App">
         {props.error && <Redirect to="/error" />}
+        {props.warning && <WarningModal />}
         <Route exact path="/">
           <Builder menus={DefaultTemplate} />
           <PreviewContainer />
@@ -29,6 +31,7 @@ const App = (props) => {
 
 const mapStateToProps = state => ({
   error: state.error,
+  warning: state.warning,
 })
 
 App.propTypes = {
