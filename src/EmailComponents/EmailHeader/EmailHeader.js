@@ -17,13 +17,13 @@ const EmailHeader = ({
     <table border="0" cellSpacing="0" cellPadding="0" width="600px" height="105px" style={{color: companyFontColor, backgroundColor: bgColor}}>
       <tbody>
         <tr>
-          {logoActive && <td width="85px">
+          {logoActive && <td width="75px">
             <div className="company-logo-container" style={{position: "relative", width: "min-content"}}>
               {loading === 'companyImage' && <ImageLoadingSpinner />}
               <img src={companyImage} alt="Company logo" border="0" style={{display: "block", width: "75px", margin: "0"}} />
             </div>
           </td>}
-          { nameActive && <td style={{fontSize: "25px"}}>{companyName}</td>}
+          { nameActive && <td style={{fontSize: "25px", paddingLeft: "1rem"}}>{companyName}</td>}
         </tr>
       </tbody>
     </table>

@@ -20,7 +20,7 @@ const EmailContent = ({ cta, buttonColor, buttonFontColor, active, buttonActive 
     <table border="0" cellSpacing="0" cellPadding="0" width="600px" style={{backgroundColor: "#ffffff"}}>
       <tbody>
         <tr>
-          {buttonActive && <td style={{padding: "0 16px"}} align="center"><button style={buttonStyle}>{Parser(cta)}</button></td>}
+          {buttonActive && <td style={{padding: "1rem"}} align="center"><button style={buttonStyle}>{Parser(cta)}</button></td>}
         </tr>
       </tbody>
     </table>
