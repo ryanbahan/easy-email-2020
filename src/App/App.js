@@ -15,9 +15,6 @@ const App = (props) => {
       <div className="App">
         {props.error && <Redirect to="/error" />}
         <Route exact path="/">
-          <LandingPage />
-        </Route>
-        <Route exact path="/general">
           <Builder menus={DefaultTemplate} />
           <PreviewContainer />
         </Route>
