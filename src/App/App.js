@@ -4,7 +4,6 @@ import { Builder } from '../views/Main/FormComponents/Builder/Builder';
 import PreviewContainer from '../views/Main/EmailPreviewComponents/PreviewContainer/PreviewContainer';
 import { DefaultTemplate } from '../utils/Templates/DefaultTemplate';
 import ErrorPage from '../views/ErrorPage/ErrorPage';
-import LandingPage from '../views/LandingPage/LandingPage';
 import { Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Analyzer from '../views/Analyzer/Analyzer';
