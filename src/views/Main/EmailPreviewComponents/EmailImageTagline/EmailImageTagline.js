@@ -35,7 +35,7 @@ const EmailImageTagline = (
     <table border="0" cellSpacing="0" cellPadding="0" style={{display: "block", color: mainImageFontColor, backgroundColor: mainImageTaglineBG, tableLayout: "fixed", width: "600px", paddingTop: "1rem"}}>
       <tbody>
         <tr>
-          {bannerTextActive && <td>
+          {bannerTextActive && <td width="400">
             {parse(mainImageTagline, {
               replace: domNode => {
                 if (domNode.name) {
