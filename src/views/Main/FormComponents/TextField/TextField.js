@@ -23,7 +23,7 @@ class TextField extends React.Component {
     if (content.length > this.props.constraints.maxLength) {
       this.props.hasWarning({
         store: this.props.store,
-        warning: "Warning: Your content exceeds the Maximum suggested length for this section."
+        warning: "Warning: Your content exceeds the maximum suggested length for this section."
       });
     } else {
       this.props.clearWarning();
