@@ -21,7 +21,7 @@ const EmailHeader = ({
           {logoActive && <td width="75px">
             <div className="company-logo-container" style={{position: "relative", width: "min-content"}}>
               {loading === 'companyImage' && <ImageLoadingSpinner />}
-              <a href={link}><img src={companyImage} alt="Company logo" border="0" style={{display: "block", width: "75px", margin: "0"}} /></a>
+              <a href={link}><img src={companyImage} alt="Company logo" border="0" style={{display: "block", width: "75px", marginLeft: "1rem"}} /></a>
             </div>
           </td>}
           { nameActive && <td style={{fontSize: "25px", paddingLeft: "1rem"}}>{companyName}</td>}
