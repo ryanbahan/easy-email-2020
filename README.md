@@ -1,4 +1,4 @@
-# Easy Email
+# Easy Email ![Size](https://github-size-badge.herokuapp.com/ryanbahan/learnable.svg)
 
 Contributors: [Ryan Bahan](https://github.com/ryanbahan)
 
