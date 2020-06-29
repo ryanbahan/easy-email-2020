@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/easy-email-2020/static/css/main.026cf9ba.chunk.css",
+    "main.js": "/easy-email-2020/static/js/main.2bd2b568.chunk.js",
+    "main.js.map": "/easy-email-2020/static/js/main.2bd2b568.chunk.js.map",
+    "runtime-main.js": "/easy-email-2020/static/js/runtime-main.fa6e3e9b.js",
+    "runtime-main.js.map": "/easy-email-2020/static/js/runtime-main.fa6e3e9b.js.map",
+    "static/css/2.3c515868.chunk.css": "/easy-email-2020/static/css/2.3c515868.chunk.css",
+    "static/js/2.a9d1af93.chunk.js": "/easy-email-2020/static/js/2.a9d1af93.chunk.js",
+    "static/js/2.a9d1af93.chunk.js.map": "/easy-email-2020/static/js/2.a9d1af93.chunk.js.map",
+    "index.html": "/easy-email-2020/index.html",
+    "precache-manifest.81c0bcd3f0a718066ce65872a5a2a1c5.js": "/easy-email-2020/precache-manifest.81c0bcd3f0a718066ce65872a5a2a1c5.js",
+    "service-worker.js": "/easy-email-2020/service-worker.js",
+    "static/css/2.3c515868.chunk.css.map": "/easy-email-2020/static/css/2.3c515868.chunk.css.map",
+    "static/css/main.026cf9ba.chunk.css.map": "/easy-email-2020/static/css/main.026cf9ba.chunk.css.map",
+    "static/js/2.a9d1af93.chunk.js.LICENSE.txt": "/easy-email-2020/static/js/2.a9d1af93.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fa6e3e9b.js",
+    "static/css/2.3c515868.chunk.css",
+    "static/js/2.a9d1af93.chunk.js",
+    "static/css/main.026cf9ba.chunk.css",
+    "static/js/main.2bd2b568.chunk.js"
+  ]
+}
