@@ -5,7 +5,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import rootReducer from '../../../utils/reducers';
 import '@testing-library/jest-dom/extend-expect';
-import { DefaultState } from '../../../../utils/Templates/DefaultState';
+import { DefaultState } from '../../../utils/Templates/DefaultState';
 
 describe("PreviewContainer", () => {
   const store = createStore(rootReducer);

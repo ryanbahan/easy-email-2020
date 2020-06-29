@@ -3,7 +3,7 @@ import ColorPicker from './ColorPicker';
 import { render } from '@testing-library/react';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import rootReducer from '../../../../utils/reducers';
+import rootReducer from '../../../utils/reducers';
 import '@testing-library/jest-dom/extend-expect';
 
 describe("ColorPicker", () => {

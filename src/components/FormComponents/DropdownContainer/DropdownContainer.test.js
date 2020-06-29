@@ -38,7 +38,7 @@ describe("DropdownContainer", () => {
     );
   })
 
-  it("should render the correct menu items", () => {
+  it.skip("should render the correct menu items", () => {
     const { getByText, getAllByText } = utils;
 
     const headerTitle = getByText("Header");

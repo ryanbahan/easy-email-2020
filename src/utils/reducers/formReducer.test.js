@@ -14,7 +14,7 @@ describe("formReducer", () => {
       companyImage: 'https://limitless-citadel-48645.herokuapp.com/images/placeholder-image.png',
       companyName: 'Figma',
       mainImage: 'https://limitless-citadel-48645.herokuapp.com/images/placeholder-image.png',
-      mainImageTagline: 'Download our new e-book for free!',
+      mainImageTagline: 'Your amazing call-to-action here!',
       mainImageButtonCopy: 'Free Download',
       mainImageTaglineBG: "#ffffff",
       mainImageButtonLink: "",
