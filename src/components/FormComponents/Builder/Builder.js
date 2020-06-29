@@ -1,7 +1,6 @@
 import React from 'react';
 import './Builder.css';
 import DropdownContainer from '../DropdownContainer/DropdownContainer';
-import { Link } from 'react-router-dom';
 import Exporter from '../Exporter/Exporter';
 import PropTypes from 'prop-types';
 
