@@ -2,7 +2,7 @@
 
 # Easy Email ![Size](https://github-size-badge.herokuapp.com/ryanbahan/easy-email-2020.svg)
 
-[Easy Email on GH Pages](https://ryanbahan.github.io/easy-email-2020/)
+**[Easy Email on GH Pages](https://ryanbahan.github.io/easy-email-2020/)**
 
 Contributors: [Ryan Bahan](https://github.com/ryanbahan)
 
