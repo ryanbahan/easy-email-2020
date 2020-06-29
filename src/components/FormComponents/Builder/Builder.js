@@ -22,9 +22,6 @@ export const Builder = ({ menus }) => {
     </div>
     <div className="buttons-wrapper">
       <Exporter />
-      <Link to="/tone-analysis">
-        <button>Analyze Tone</button>
-      </Link>
     </div>
   </section>
   )

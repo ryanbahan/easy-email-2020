@@ -1,7 +1,7 @@
 export const DefaultState = {
-  companyImage: 'https://limitless-citadel-48645.herokuapp.com/images/placeholder-image.png',
+  companyImage: process.env.PUBLIC_URL + '/placeholder-image.png',
   companyName: 'Company Name',
-  mainImage: 'https://limitless-citadel-48645.herokuapp.com/images/placeholder-image.png',
+  mainImage: process.env.PUBLIC_URL + '/placeholder-image.png',
   mainImageTagline: 'Your amazing call-to-action here!',
   mainImageButtonCopy: 'Free Download',
   content: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`,
