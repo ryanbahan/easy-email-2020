@@ -2,17 +2,17 @@
 
 # Easy Email ![Size](https://github-size-badge.herokuapp.com/ryanbahan/easy-email-2020.svg)
 
-##[Easy Email on GH Pages](https://ryanbahan.github.io/easy-email-2020/)
+**[USE THE APP HERE!](https://ryanbahan.github.io/easy-email-2020/)**
 
-Contributors: [Ryan Bahan](https://github.com/ryanbahan)
+Built by [Ryan Bahan](https://github.com/ryanbahan)
+
+![image](https://user-images.githubusercontent.com/54119863/79816698-106e5300-8341-11ea-8a59-8334843901e6.png)
 
 1. [Abstract](#1-abstract)
 2. [Technology](#2-technology)
 3. [Installation](#3-installation)
 4. [Installation](#4-testing)
 5. [Deployment](#5-deployment)
-
-![image](https://user-images.githubusercontent.com/54119863/79816698-106e5300-8341-11ea-8a59-8334843901e6.png)
 
 ### 1. Abstract
 
